@@ -1,0 +1,22 @@
+/* reveal.js — animações de entrada ao rolar (IntersectionObserver) */
+(function () {
+  var items = document.querySelectorAll(".reveal");
+  if (!items.length) return;
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function (el) { el.classList.add("is-visible"); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+  items.forEach(function (el) { io.observe(el); });
+})();

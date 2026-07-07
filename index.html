@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Judiy &amp; Igor · Você está convidado(a)</title>
+  <meta name="description" content="Você recebeu um convite de Judiy & Igor — venha celebrar conosco o nosso casamento." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Tangerine:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body class="is-locked">
+
+  <!-- ============ SVG sprite: reusable defs, gradients & crest ============ -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-silver" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f4f4f2" />
+        <stop offset="0.35" stop-color="#c9cac6" />
+        <stop offset="0.55" stop-color="#8a8b87" />
+        <stop offset="0.75" stop-color="#c9cac6" />
+        <stop offset="1" stop-color="#7c7d79" />
+      </linearGradient>
+      <linearGradient id="g-photo" x1="0" y1="0" x2="0.6" y2="1">
+        <stop offset="0" stop-color="#c8c4bb" />
+        <stop offset="0.5" stop-color="#a49f96" />
+        <stop offset="1" stop-color="#6f6a61" />
+      </linearGradient>
+      <linearGradient id="g-ribbon" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#f6f3ea" />
+        <stop offset="1" stop-color="#ddd6c4" />
+      </linearGradient>
+    </defs>
+
+    <!-- Ornate monogram crest -->
+    <symbol id="crest" viewBox="0 0 200 244">
+      <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+        <!-- twin oval outline -->
+        <ellipse cx="100" cy="124" rx="54" ry="74" />
+        <ellipse cx="100" cy="124" rx="48" ry="68" stroke-width="0.8" />
+        <!-- crown gem -->
+        <path d="M100 34 l7 7 -7 7 -7 -7 z" fill="currentColor" fill-opacity="0.25" />
+        <!-- symmetric scrollwork (right half + mirror) -->
+        <g>
+          <path d="M100 50 C121 47 137 55 137 72 C137 84 127 90 120 84 C114 79 120 70 128 73" />
+          <path d="M154 96 C170 100 176 116 168 128 C163 135 154 133 154 124 C154 118 160 116 163 120" />
+          <path d="M100 198 C122 201 138 194 140 180 C141 171 133 166 127 171 C122 175 127 183 134 181" />
+          <path d="M46 96 C30 100 24 116 32 128 C37 135 46 133 46 124 C46 118 40 116 37 120" />
+          <path d="M100 50 C79 47 63 55 63 72 C63 84 73 90 80 84 C86 79 80 70 72 73" />
+          <path d="M100 198 C78 201 62 194 60 180 C59 171 67 166 73 171 C78 175 73 183 66 181" />
+        </g>
+        <!-- rose accents -->
+        <g stroke-width="1">
+          <circle cx="100" cy="206" r="6" />
+          <circle cx="100" cy="206" r="2.4" />
+          <circle cx="54" cy="72" r="4.5" /><circle cx="146" cy="72" r="4.5" />
+        </g>
+      </g>
+      <!-- initials -->
+      <text x="100" y="140" text-anchor="middle" font-family="Pinyon Script, cursive" font-size="52" fill="currentColor">J&amp;I</text>
+    </symbol>
+
+    <!-- Horizontal floral flourish -->
+    <symbol id="flourish" viewBox="0 0 320 52">
+      <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M160 10 C150 2 140 2 138 12 C137 20 146 22 150 16" />
+        <path d="M160 10 C170 2 180 2 182 12 C183 20 174 22 170 16" />
+        <path d="M160 14 V30" />
+        <!-- right vine -->
+        <path d="M162 30 C200 24 236 30 272 22 C286 19 296 24 300 32" />
+        <path d="M300 32 C305 24 314 24 316 32 C317 39 309 41 306 35" />
+        <path d="M214 27 C210 18 218 12 226 16 C222 22 218 24 214 27" />
+        <path d="M250 24 C246 15 254 9 262 13 C258 19 254 21 250 24" />
+        <path d="M188 29 c-3 -7 4 -12 10 -9" />
+        <!-- left vine (mirror) -->
+        <path d="M158 30 C120 24 84 30 48 22 C34 19 24 24 20 32" />
+        <path d="M20 32 C15 24 6 24 4 32 C3 39 11 41 14 35" />
+        <path d="M106 27 C110 18 102 12 94 16 C98 22 102 24 106 27" />
+        <path d="M70 24 C74 15 66 9 58 13 C62 19 66 21 70 24" />
+        <path d="M132 29 c3 -7 -4 -12 -10 -9" />
+      </g>
+    </symbol>
+  </svg>
+
+  <!-- ======================= ENVELOPE GATE ======================= -->
+  <div class="gate" id="gate">
+    <div class="gate__inner">
+      <p class="eyebrow gate__eyebrow">Você recebeu um convite de</p>
+      <h1 class="gate__names">Judiy &amp; Igor</h1>
+
+      <button class="envelope" id="envelope" type="button" aria-label="Toque no envelope para abrir o convite">
+        <span class="envelope__flap"></span>
+        <span class="envelope__pocket">
+          <svg class="envelope__crest" viewBox="0 0 200 244"><use href="#crest" /></svg>
+        </span>
+        <span class="envelope__lip"></span>
+      </button>
+
+      <p class="eyebrow gate__hint">Toque no envelope para abrir</p>
+    </div>
+  </div>
+
+  <!-- ======================= PAGE ======================= -->
+  <main class="page" id="page">
+
+    <!-- ---------- Welcome ---------- -->
+    <section class="section welcome reveal" id="welcome" aria-label="Boas-vindas">
+      <div class="locket" role="img" aria-label="Medalhão em formato de coração com fotos de infância do casal">
+        <svg class="locket__svg" viewBox="0 0 260 200">
+          <!-- ribbon -->
+          <path d="M40 44 C90 12 120 40 130 60 C140 40 170 12 220 44"
+                fill="none" stroke="url(#g-ribbon)" stroke-width="9" stroke-linecap="round" opacity="0.95"/>
+          <path d="M40 44 C90 12 120 40 130 60 C140 40 170 12 220 44"
+                fill="none" stroke="#cfc7b3" stroke-width="9" stroke-linecap="round" opacity="0.25"/>
+          <!-- left heart -->
+          <g transform="translate(66 118) rotate(-8)">
+            <path id="heartL" d="M0 -20 C-14 -40 -44 -30 -44 -6 C-44 16 -14 30 0 44 C14 30 44 16 44 -6 C44 -30 14 -40 0 -20 Z"/>
+            <clipPath id="clipL"><use href="#heartL"/></clipPath>
+            <rect x="-46" y="-42" width="92" height="88" fill="url(#g-photo)" clip-path="url(#clipL)"/>
+            <use href="#heartL" fill="none" stroke="url(#g-silver)" stroke-width="6"/>
+            <use href="#heartL" fill="none" stroke="#6f6a61" stroke-width="1" opacity="0.5"/>
+          </g>
+          <!-- right heart -->
+          <g transform="translate(178 112) rotate(8)">
+            <path id="heartR" d="M0 -20 C-14 -40 -44 -30 -44 -6 C-44 16 -14 30 0 44 C14 30 44 16 44 -6 C44 -30 14 -40 0 -20 Z"/>
+            <clipPath id="clipR"><use href="#heartR"/></clipPath>
+            <rect x="-46" y="-42" width="92" height="88" fill="url(#g-photo)" clip-path="url(#clipR)"/>
+            <use href="#heartR" fill="none" stroke="url(#g-silver)" stroke-width="6"/>
+            <use href="#heartR" fill="none" stroke="#6f6a61" stroke-width="1" opacity="0.5"/>
+          </g>
+          <!-- hinge -->
+          <rect x="120" y="96" width="8" height="34" rx="3" fill="url(#g-silver)"/>
+        </svg>
+      </div>
+
+      <p class="welcome__text">
+        Ao começarmos esse novo capítulo, significaria muito para nós ter você ao
+        nosso lado nesse dia especial. Aqui você vai encontrar tudo o que precisa
+        saber — horário, local e um jeitinho de confirmar sua presença.
+      </p>
+      <p class="welcome__text welcome__text--em">
+        Que venha o amor, a alegria e o início do nosso para sempre!
+      </p>
+      <p class="eyebrow">Com amor</p>
+      <p class="signature">Judiy &amp; Igor</p>
+    </section>
+
+    <!-- ---------- Countdown ---------- -->
+    <section class="section countdown reveal" id="countdown" aria-label="Contagem regressiva">
+      <svg class="flourish" viewBox="0 0 320 52" aria-hidden="true"><use href="#flourish"/></svg>
+      <h2 class="script-title countdown__title">A contagem já começou!</h2>
+      <div class="countdown__clock" id="clock" role="timer" aria-live="off">
+        <div class="cd-unit"><span class="cd-num" data-days>—</span><span class="cd-label">Dias</span></div>
+        <span class="cd-colon">:</span>
+        <div class="cd-unit"><span class="cd-num" data-hours>—</span><span class="cd-label">Horas</span></div>
+        <span class="cd-colon">:</span>
+        <div class="cd-unit"><span class="cd-num" data-minutes>—</span><span class="cd-label">Minutos</span></div>
+        <span class="cd-colon">:</span>
+        <div class="cd-unit"><span class="cd-num" data-seconds>—</span><span class="cd-label">Segundos</span></div>
+      </div>
+      <svg class="flourish flourish--flip" viewBox="0 0 320 52" aria-hidden="true"><use href="#flourish"/></svg>
+    </section>
+
+    <!-- ---------- The Details (CTA) ---------- -->
+    <section class="section details reveal" id="details" aria-label="Os detalhes">
+      <div class="details__card">
+        <div class="polaroids" aria-hidden="true">
+          <span class="polaroid polaroid--1"></span>
+          <span class="polaroid polaroid--2"></span>
+          <span class="polaroid polaroid--3"></span>
+        </div>
+        <h2 class="script-title details__title">Os Detalhes</h2>
+        <a class="btn" href="#dateloc">Clique aqui</a>
+      </div>
+    </section>
+
+    <!-- ---------- Our Story ---------- -->
+    <section class="section story reveal" id="story" aria-label="Nossa história">
+      <div class="heart-photo" role="img" aria-label="O casal na praia ao entardecer">
+        <svg viewBox="0 0 240 230">
+          <path id="bigHeart" d="M120 58 C96 12 24 24 24 84 C24 138 96 176 120 210 C144 176 216 138 216 84 C216 24 144 12 120 58 Z"/>
+          <clipPath id="clipBig"><use href="#bigHeart"/></clipPath>
+          <rect x="20" y="10" width="200" height="205" fill="url(#g-photo)" clip-path="url(#clipBig)"/>
+          <!-- lace scalloped edge -->
+          <use href="#bigHeart" fill="none" stroke="#f4f1e8" stroke-width="10" stroke-dasharray="2 6" stroke-linecap="round"/>
+          <use href="#bigHeart" fill="none" stroke="#efe9da" stroke-width="3"/>
+        </svg>
+      </div>
+      <h2 class="script-title story__title">Nossa História</h2>
+      <p class="story__text">
+        De um encontro despretensioso a uma promessa para a vida toda — cada momento
+        nos trouxe até aqui. Obrigado por fazer parte dos capítulos que nos formaram,
+        e daquele que começa no dia do nosso casamento.
+      </p>
+    </section>
+
+    <!-- ---------- Date & Location ---------- -->
+    <section class="section dateloc reveal" id="dateloc" aria-label="Data e local">
+      <h2 class="script-title dateloc__title">Data e Local</h2>
+
+      <div class="info-block">
+        <p class="eyebrow">Data</p>
+        <p class="info-lead">27 de março de 2027</p>
+      </div>
+      <div class="info-block">
+        <p class="eyebrow">Cerimônia</p>
+        <p class="info-body">Chegada dos convidados às 8h30<br>Cerimônia às 9h<br>Local a confirmar</p>
+      </div>
+      <div class="info-block">
+        <p class="eyebrow">Café da manhã</p>
+        <p class="info-body">Logo após a cerimônia<br>Local a confirmar</p>
+      </div>
+
+      <div class="oval-frame" role="img" aria-label="O jardim onde acontecerá a cerimônia">
+        <svg viewBox="0 0 240 180">
+          <ellipse id="ov" cx="120" cy="90" rx="92" ry="66"/>
+          <clipPath id="clipOv"><use href="#ov"/></clipPath>
+          <rect x="26" y="22" width="188" height="136" fill="url(#g-photo)" clip-path="url(#clipOv)"/>
+          <use href="#ov" fill="none" stroke="url(#g-silver)" stroke-width="10"/>
+          <use href="#ov" fill="none" stroke="#6f6a61" stroke-width="1" opacity="0.4"/>
+          <ellipse cx="120" cy="90" rx="80" ry="54" fill="none" stroke="#f4f4f2" stroke-width="1" opacity="0.5"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ---------- Timeline ---------- -->
+    <section class="section timeline reveal" id="timeline" aria-label="Nosso roteiro">
+      <h2 class="script-title timeline__title">Nosso Roteiro</h2>
+      <ul class="tl-grid">
+        <li class="tl-item">
+          <svg class="tl-icon" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 40V23c0-8 6-13 12-13s12 5 12 13v17"/><path d="M8 40h32"/><circle cx="24" cy="8" r="1.8"/><circle cx="16" cy="12" r="1.4"/><circle cx="32" cy="12" r="1.4"/></g></svg>
+          <span class="tl-time">8h30</span><span class="tl-label">Chegada</span>
+        </li>
+        <li class="tl-item">
+          <svg class="tl-icon" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22h18l2 6H13z"/><path d="M14 28h20v10H14z"/><circle cx="21" cy="26" r="4"/><circle cx="28" cy="27" r="4"/><path d="M21 20l1.5 2h-3z"/></g></svg>
+          <span class="tl-time">9h00</span><span class="tl-label">Cerimônia</span>
+        </li>
+        <li class="tl-item">
+          <svg class="tl-icon" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 20h16v11a8 8 0 0 1-16 0z"/><path d="M30 23h3a4 4 0 0 1 0 8h-3"/><path d="M10 39h24"/><path d="M18 16c-1-2 1-3 0-5M24 16c-1-2 1-3 0-5"/></g></svg>
+          <span class="tl-time">Em seguida</span><span class="tl-label">Café da manhã</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ---------- Where To Stay ---------- -->
+    <section class="section stay reveal" id="stay" aria-label="Onde ficar">
+      <h2 class="script-title stay__title">Onde Ficar</h2>
+      <p class="stay__intro">
+        Em breve compartilhamos aqui algumas sugestões de hospedagem para quem vier de
+        fora. Qualquer dúvida, é só chamar a gente!
+      </p>
+
+      <svg class="cart" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16q0-3 3-3h14q3 0 3 3v14H14z"/><path d="M12 30h24"/><path d="M20 13v17M28 13v17"/><path d="M16 30v5M32 30v5"/><circle cx="17" cy="37" r="2"/><circle cx="27" cy="37" r="2"/><circle cx="32" cy="37" r="2"/><circle cx="24" cy="10" r="1.6"/></g></svg>
+    </section>
+
+    <!-- ---------- RSVP ---------- -->
+    <section class="section rsvp reveal" id="rsvp" aria-label="RSVP">
+      <div class="lace-oval">
+        <svg class="lace-oval__svg" viewBox="0 0 240 300" aria-hidden="true">
+          <ellipse cx="120" cy="150" rx="104" ry="134" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1 7" stroke-linecap="round"/>
+          <ellipse cx="120" cy="150" rx="94" ry="123" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <ellipse cx="120" cy="150" rx="86" ry="114" fill="none" stroke="currentColor" stroke-width="0.7"/>
+          <g fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M120 27 c-8 -10 -22 -4 -20 8 c8 -6 14 -2 20 4 c6 -6 12 -10 20 -4 c2 -12 -12 -18 -20 -8z"/>
+            <path d="M120 273 c-8 10 -22 4 -20 -8 c8 6 14 2 20 -4 c6 6 12 10 20 4 c2 12 -12 18 -20 8z"/>
+            <path d="M27 150 c-8 -6 -6 -16 4 -16 c-2 6 0 10 6 12 c-6 4 -8 8 -6 14 c-10 0 -12 -12 -4 -10z"/>
+            <path d="M213 150 c8 -6 6 -16 -4 -16 c2 6 0 10 -6 12 c6 4 8 8 6 14 c10 0 12 -12 4 -10z"/>
+          </g>
+        </svg>
+        <div class="lace-oval__content">
+          <h2 class="script-title rsvp__title">Confirme<br>sua presença</h2>
+          <a class="btn" id="rsvp-btn" href="#" target="_blank" rel="noopener">Clique aqui</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Footer / Contact ---------- -->
+    <footer class="section footer reveal" aria-label="Contato">
+      <svg class="crest" viewBox="0 0 200 244" aria-hidden="true"><use href="#crest"/></svg>
+      <p class="footer__contact">
+        Para qualquer dúvida, fale com a gente:<br>
+        <a id="contact-link" href="#">chamberlainwedding@gmail.com</a>
+      </p>
+      <p class="eyebrow">Com amor</p>
+      <p class="signature">Judiy &amp; Igor</p>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

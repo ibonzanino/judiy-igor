@@ -1,0 +1,60 @@
+/* ============================================================
+   animations.css — reveal no scroll, pulse, reduced-motion
+   ============================================================ */
+
+/* Reveal ao rolar: estado inicial */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--reveal-dur) var(--ease),
+    transform var(--reveal-dur) var(--ease);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Elementos internos com leve atraso escalonado */
+.reveal > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.7s var(--ease);
+}
+.reveal.is-visible > * {
+  opacity: 1;
+  transform: none;
+}
+.reveal.is-visible > *:nth-child(2) { transition-delay: 0.08s; }
+.reveal.is-visible > *:nth-child(3) { transition-delay: 0.16s; }
+.reveal.is-visible > *:nth-child(4) { transition-delay: 0.24s; }
+.reveal.is-visible > *:nth-child(5) { transition-delay: 0.32s; }
+.reveal.is-visible > *:nth-child(6) { transition-delay: 0.40s; }
+.reveal.is-visible > *:nth-child(n + 7) { transition-delay: 0.48s; }
+
+/* Dica pulsante no envelope */
+@keyframes pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+/* ---------- Respeita prefers-reduced-motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .gate,
+  .gate__hint,
+  .envelope,
+  .envelope__flap {
+    transition: opacity 0.3s ease !important;
+    animation: none !important;
+  }
+  .envelope.is-open .envelope__flap { transform: rotateX(-178deg); }
+}

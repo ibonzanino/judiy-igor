@@ -1,0 +1,62 @@
+/* ============================================================
+   Design tokens — cores, tipografia, espaçamento
+   ============================================================ */
+:root {
+  /* ---- Paleta (papel marfim, taupe, sálvia, tinta) ---- */
+  --paper: #f3efe3;
+  --paper-2: #ebe6d6;
+  --paper-3: #e4ddc9;
+  --taupe: #8b8175;
+  --taupe-deep: #6f6559;
+  --sage: #9da08a;
+  --sage-deep: #7f8168;
+  --sage-soft: #b9bca8;
+  --ink: #3e3c37;
+  --ink-soft: #57534b;
+  --muted: #6e6a61;
+  --line: #cfc7b3;
+
+  /* metais (molduras prateadas) */
+  --silver-1: #d9d9d9;
+  --silver-2: #a9aaa6;
+  --silver-3: #7c7d79;
+  --silver-hi: #f4f4f2;
+
+  /* ---- Tipografia ---- */
+  --font-script: "Pinyon Script", "Segoe Script", cursive;
+  --font-calli: "Tangerine", "Pinyon Script", cursive;
+  --font-caps: "Cinzel", "Trajan Pro", Georgia, serif;
+  --font-body: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+
+  /* ---- Escala tipográfica ---- */
+  --fs-caps-sm: 0.72rem;
+  --fs-caps: 0.86rem;
+  --fs-body: 1.12rem;
+  --fs-body-lg: 1.28rem;
+  --fs-script-sm: 2.6rem;
+  --fs-script: 3.4rem;
+  --fs-calli: 4rem;
+  --fs-countdown: 3rem;
+
+  /* letter-spacing p/ caps gravadas */
+  --track-caps: 0.28em;
+  --track-caps-sm: 0.34em;
+
+  /* ---- Layout ---- */
+  --page-max: 30rem;      /* ~480px — leitura de microsite */
+  --gutter: 1.5rem;
+  --section-y: 5rem;
+  --radius: 3px;
+
+  /* ---- Movimento ---- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --reveal-dur: 0.9s;
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --fs-calli: 4.6rem;
+    --fs-countdown: 3.4rem;
+    --section-y: 6rem;
+  }
+}
