@@ -89,6 +89,48 @@
         <path d="M132 29 c3 -7 -4 -12 -10 -9" />
       </g>
     </symbol>
+
+    <!-- Ornate silver medallion (envelope seal) -->
+    <symbol id="medallion" viewBox="0 0 200 264">
+      <g fill="none" stroke="url(#g-silver)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <!-- top fleur-de-lis -->
+        <path d="M100 22 C95 32 99 43 100 46 C101 43 105 32 100 22 Z" />
+        <path d="M100 46 C91 40 82 45 86 53 C89 59 98 56 100 50" />
+        <path d="M100 46 C109 40 118 45 114 53 C111 59 102 56 100 50" />
+        <path d="M87 51 H113" />
+        <path d="M100 50 V57" />
+        <!-- bottom fleur-de-lis -->
+        <path d="M100 242 C95 232 99 221 100 218 C101 221 105 232 100 242 Z" />
+        <path d="M100 218 C91 224 82 219 86 211 C89 205 98 208 100 214" />
+        <path d="M100 218 C109 224 118 219 114 211 C111 205 102 208 100 214" />
+        <path d="M87 213 H113" />
+        <path d="M100 214 V207" />
+        <!-- side scrolls -->
+        <path d="M36 132 c-11 -6 -11 -19 2 -19 M36 132 c-11 6 -11 19 2 19" />
+        <path d="M164 132 c11 -6 11 -19 -2 -19 M164 132 c11 6 11 19 -2 19" />
+      </g>
+      <!-- oval bezel (silver bevel + cream field) -->
+      <ellipse cx="100" cy="132" rx="58" ry="82" fill="#efe9da" stroke="url(#g-silver)" stroke-width="11" />
+      <ellipse cx="100" cy="132" rx="63.5" ry="87.5" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.55" />
+      <ellipse cx="100" cy="132" rx="52.5" ry="76.5" fill="none" stroke="#7c7d79" stroke-width="1" opacity="0.55" />
+      <!-- beaded inner ring -->
+      <ellipse cx="100" cy="132" rx="46" ry="68" fill="none" stroke="url(#g-silver)" stroke-width="2.2" stroke-dasharray="1 4.4" stroke-linecap="round" />
+      <!-- inner flourish above initials -->
+      <g fill="none" stroke="#9a9b97" stroke-width="1.5" stroke-linecap="round">
+        <path d="M100 100 v5" />
+        <path d="M100 102 c-6 -3 -12 -1 -14 3" />
+        <path d="M100 102 c6 -3 12 -1 14 3" />
+      </g>
+      <!-- initials (engraved serif, embossed) -->
+      <text x="99" y="150" text-anchor="middle" font-family="Cinzel, serif" font-weight="600" font-size="42" fill="#f4f4f2" opacity="0.5">J&amp;I</text>
+      <text x="100" y="151" text-anchor="middle" font-family="Cinzel, serif" font-weight="600" font-size="42" fill="#7f807c">J&amp;I</text>
+      <!-- inner flourish below initials -->
+      <g fill="none" stroke="#9a9b97" stroke-width="1.5" stroke-linecap="round">
+        <path d="M100 164 v-5" />
+        <path d="M100 162 c-6 3 -12 1 -14 -3" />
+        <path d="M100 162 c6 3 12 1 14 -3" />
+      </g>
+    </symbol>
   </svg>
 
   <!-- ======================= ENVELOPE GATE ======================= -->
@@ -98,13 +140,18 @@
       <h1 class="gate__names">Judiy &amp; Igor</h1>
 
       <button class="envelope" id="envelope" type="button" aria-label="Toque no envelope para abrir o convite">
-        <span class="envelope__flap"></span>
-        <span class="envelope__pocket">
-          <svg class="envelope__crest" viewBox="0 0 200 244"><use href="#crest" /></svg>
-        </span>
         <span class="envelope__lip"></span>
+        <span class="envelope__pocket"></span>
+        <span class="envelope__flap"></span>
+        <svg class="envelope__medallion" viewBox="0 0 200 264" aria-hidden="true"><use href="#medallion" /></svg>
       </button>
 
+      <svg class="gate__divider" viewBox="0 0 220 14" aria-hidden="true">
+        <line x1="8" y1="7" x2="86" y2="7" stroke="currentColor" stroke-width="1" />
+        <line x1="134" y1="7" x2="212" y2="7" stroke="currentColor" stroke-width="1" />
+        <path d="M110 2l6 5-6 5-6-5z" fill="currentColor" />
+        <path d="M92 7h10M118 7h10" stroke="currentColor" stroke-width="1" />
+      </svg>
       <p class="eyebrow gate__hint">Toque no envelope para abrir</p>
     </div>
   </div>
@@ -114,8 +161,11 @@
 
     <!-- ---------- Welcome ---------- -->
     <section class="section welcome reveal" id="welcome" aria-label="Boas-vindas">
-      <div class="locket" role="img" aria-label="Medalhão em formato de coração com fotos de infância do casal">
-        <svg class="locket__svg" viewBox="0 0 260 200">
+      <div class="locket">
+        <img class="locket__photo" src="assets/img/locket.png"
+             alt="Medalhão de coração aberto com as fotos de infância de Judiy e Igor"
+             onerror="this.hidden=true;this.nextElementSibling.hidden=false;">
+        <svg class="locket__svg" viewBox="0 0 260 200" role="img" aria-label="Medalhão de coração com fotos do casal" hidden>
           <!-- ribbon -->
           <path d="M40 44 C90 12 120 40 130 60 C140 40 170 12 220 44"
                 fill="none" stroke="url(#g-ribbon)" stroke-width="9" stroke-linecap="round" opacity="0.95"/>

@@ -35,10 +35,13 @@ button falls back to a `mailto:` using `contactEmail`.
 
 ## Photos
 
-The framed photos (heart locket, Our Story heart, venue oval) currently use soft grayscale
-**placeholders** drawn in SVG. To use real photos, replace the `<rect fill="url(#g-photo)">`
-inside each frame in `index.html` with an `<image href="assets/img/your-photo.jpg" .../>`
-(kept inside the same `clip-path`). Drop the image files in `assets/img/`.
+**Heart locket (welcome):** uses `assets/img/locket.png` (a transparent-background cut-out works
+best). Until that file exists, an SVG locket is shown as a fallback. See `assets/img/README.md`.
+
+The other framed photos (Our Story heart, venue oval) still use soft grayscale **placeholders**
+drawn in SVG. To use real photos, replace the `<rect fill="url(#g-photo)">` inside each frame in
+`index.html` with an `<image href="assets/img/your-photo.jpg" .../>` (kept inside the same
+`clip-path`). Drop the image files in `assets/img/`.
 
 ## Structure
 
