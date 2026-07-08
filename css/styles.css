@@ -101,26 +101,6 @@ html {
   letter-spacing: calc(var(--track-caps-sm) + 0.04em);
 }
 
-/* Bordered button (VISIT WEBSITE) */
-.btn-outline {
-  display: inline-block;
-  font-family: var(--font-caps);
-  text-transform: uppercase;
-  letter-spacing: var(--track-caps-sm);
-  font-size: var(--fs-caps-sm);
-  color: var(--ink-soft);
-  border: 1px solid var(--line);
-  padding: 0.9em 1.6em;
-  margin-top: 0.4rem;
-  transition: background-color 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
-}
-.btn-outline:hover,
-.btn-outline:focus-visible {
-  background-color: var(--sage-deep);
-  border-color: var(--sage-deep);
-  color: var(--paper);
-}
-
 /* ---------- Page & sections ---------- */
 .page {
   max-width: var(--page-max);
@@ -288,6 +268,15 @@ html {
   line-height: 1.75;
 }
 .welcome__text--em { color: var(--taupe-deep); }
+.welcome__quote {
+  max-width: 30ch;
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  color: var(--taupe-deep);
+  line-height: 1.5;
+  margin-top: 0.6rem;
+}
+.welcome__signoff { margin-top: 0.8rem; }
 
 /* ============================================================
    Countdown
@@ -397,6 +386,26 @@ html {
   line-height: 1.75;
   color: #ece7db;
 }
+.story__quote {
+  max-width: 32ch;
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  line-height: 1.55;
+  color: #f6f3ea;
+}
+.story__cite {
+  font-family: var(--font-caps);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.66rem;
+  color: #d9d3c4;
+}
 
 /* ============================================================
    Date & Location
@@ -412,12 +421,11 @@ html {
    ============================================================ */
 .timeline__title { margin-bottom: 1rem; }
 .tl-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.6rem 1.2rem;
   width: 100%;
-  max-width: 20rem;
+  max-width: 24rem;
 }
 .tl-item {
   display: flex;
@@ -427,10 +435,10 @@ html {
   color: var(--ink);
 }
 .tl-icon {
-  width: 3.2rem;
-  height: 3.2rem;
-  color: var(--ink-soft);
-  margin-bottom: 0.4rem;
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+  margin-bottom: 0.3rem;
 }
 .tl-time {
   font-family: var(--font-caps);
@@ -443,47 +451,6 @@ html {
   font-size: 1.02rem;
   color: var(--muted);
 }
-
-/* ============================================================
-   Where To Stay
-   ============================================================ */
-.stay { gap: 1.2rem; }
-.stay__intro {
-  max-width: 38ch;
-  font-style: italic;
-  color: var(--ink-soft);
-  line-height: 1.7;
-}
-.cart {
-  width: 3.4rem;
-  height: 3.4rem;
-  color: var(--ink-soft);
-  margin: 0.4rem 0 0.6rem;
-}
-.hotel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1.4rem 0;
-  width: 100%;
-  max-width: 24rem;
-}
-.hotel + .hotel { border-top: 1px solid var(--line); }
-.hotel__name {
-  font-family: var(--font-caps);
-  text-transform: uppercase;
-  letter-spacing: var(--track-caps-sm);
-  font-size: 1.02rem;
-  font-weight: 500;
-  color: var(--ink);
-}
-.hotel__meta {
-  font-style: italic;
-  color: var(--ink-soft);
-  line-height: 1.6;
-}
-.hotel__meta--em { color: var(--taupe-deep); }
 
 /* ============================================================
    RSVP

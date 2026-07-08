@@ -21,13 +21,6 @@
     contact.href = "mailto:" + cfg.contactEmail;
   }
 
-  // Links "Visit website" dos hotéis
-  var links = cfg.hotelLinks || {};
-  document.querySelectorAll("[data-hotel]").forEach(function (a) {
-    var url = links[a.getAttribute("data-hotel")];
-    if (url) a.href = url;
-  });
-
   // Título da aba com os nomes
   if (cfg.names) document.title = cfg.names + " · Você está convidado(a)";
 })();

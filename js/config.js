@@ -10,17 +10,11 @@ window.WEDDING = {
 
   /* Data/hora do casamento no formato ISO (fuso local).
      Formato: "AAAA-MM-DDTHH:MM:SS". Usado pelo countdown. */
-  weddingDate: "2027-03-27T08:30:00",
+  weddingDate: "2027-03-27T08:00:00",
 
   /* Link do RSVP — Google Form (ou deixe vazio "" para usar o mailto abaixo). */
   rsvpUrl: "https://forms.gle/your-rsvp-form-id",
 
   /* E-mail de contato (rodapé + fallback de RSVP via mailto). */
   contactEmail: "chamberlainwedding@gmail.com",
-
-  /* Links "VISIT WEBSITE" dos hotéis (Where To Stay). */
-  hotelLinks: {
-    hotel1: "https://www.google.com/maps",
-    hotel2: "https://www.google.com/maps",
-  },
 };
