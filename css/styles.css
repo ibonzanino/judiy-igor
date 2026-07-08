@@ -251,7 +251,13 @@ html {
 /* ============================================================
    Welcome
    ============================================================ */
-.welcome { padding-top: calc(var(--section-y) + 1rem); }
+.welcome { padding-top: calc(var(--section-y) + 1rem); gap: 1.4rem; }
+.welcome__message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: min(92%, 34ch);
+}
 .locket { width: min(92%, 360px); }
 .locket__photo {
   width: 100%;
@@ -262,21 +268,21 @@ html {
 .locket__svg { width: min(83%, 300px); height: auto; margin: 0 auto; }
 .locket__svg[hidden] { display: none; }
 .welcome__text {
-  max-width: 34ch;
   font-style: italic;
   color: var(--ink-soft);
-  line-height: 1.75;
+  line-height: 1.55;
+  text-align: justify;
+  text-align-last: center;
 }
 .welcome__text--em { color: var(--taupe-deep); }
 .welcome__quote {
-  max-width: 30ch;
+  margin-top: 0.5rem;
   font-style: italic;
   font-size: var(--fs-body-lg);
   color: var(--taupe-deep);
-  line-height: 1.5;
-  margin-top: 0.6rem;
+  line-height: 1.4;
 }
-.welcome__signoff { margin-top: 0.8rem; }
+.welcome__signoff { margin-top: 0.6rem; }
 
 /* ============================================================
    Countdown
@@ -380,22 +386,28 @@ html {
 .story .script-title { color: #f4f1e8; }
 .heart-photo { width: min(70%, 260px); }
 .heart-photo svg { width: 100%; height: auto; }
+.story__message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: min(92%, 32ch);
+}
 .story__text {
-  max-width: 32ch;
   font-style: italic;
-  line-height: 1.75;
+  line-height: 1.55;
   color: #ece7db;
+  text-align: justify;
+  text-align-last: center;
 }
 .story__quote {
-  max-width: 32ch;
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.5rem;
   font-style: italic;
   font-size: var(--fs-body-lg);
-  line-height: 1.55;
+  line-height: 1.4;
   color: #f6f3ea;
 }
 .story__cite {
