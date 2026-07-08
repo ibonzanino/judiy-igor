@@ -54,12 +54,13 @@ html {
 
 .signature {
   font-family: var(--font-script);
-  font-size: clamp(2.3rem, 11vw, 3.4rem);
-  line-height: 1.15;
+  font-size: clamp(1.9rem, 8.5vw, 3.2rem);
+  line-height: 1.25;
   color: var(--sage-deep);
   margin-top: 0.15em;
-  padding-inline: 0.4em;
+  padding-inline: 0.3em;
   max-width: 100%;
+  white-space: nowrap;
 }
 
 /* legible ampersand inside script names */
@@ -153,12 +154,13 @@ html {
 .gate__names {
   font-family: var(--font-script);
   font-weight: 400;
-  font-size: clamp(2.8rem, 12vw, 4.8rem);
-  line-height: 1.12;
+  font-size: clamp(2.1rem, 10vw, 4.4rem);
+  line-height: 1.1;
   color: #f5f2ea;
   text-shadow: 0 2px 22px rgba(0, 0, 0, 0.4);
-  padding-inline: 0.4em;
+  padding-inline: 0.15em;
   max-width: 100%;
+  white-space: nowrap;
 }
 .gate__divider {
   width: min(70%, 220px);
@@ -269,6 +271,7 @@ html {
 .locket__svg[hidden] { display: none; }
 .welcome__text {
   font-style: italic;
+  font-size: 1.24rem;
   color: var(--ink-soft);
   line-height: 1.55;
   text-align: justify;
@@ -287,13 +290,16 @@ html {
 /* ============================================================
    Countdown
    ============================================================ */
-.countdown { gap: 1.6rem; }
-.flourish {
-  width: min(80%, 320px);
-  height: auto;
-  color: var(--sage-soft);
+.countdown { gap: 0.9rem; padding-block: 3.2rem; }
+.cd-arranjo-frame { width: min(86%, 340px); }
+.cd-arranjo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 1;
+  object-fit: cover;
+  opacity: 0.9;
 }
-.flourish--flip { transform: scaleY(-1); }
+.cd-arranjo--flip { transform: rotate(180deg); }
 .countdown__title { font-size: calc(var(--fs-calli) * 0.9); }
 
 .countdown__clock {
@@ -394,6 +400,7 @@ html {
 }
 .story__text {
   font-style: italic;
+  font-size: 1.24rem;
   line-height: 1.55;
   color: #ece7db;
   text-align: justify;
@@ -425,8 +432,46 @@ html {
 .dateloc { gap: 1.4rem; }
 .dateloc__title { margin-bottom: 0.6rem; }
 .info-block { display: flex; flex-direction: column; gap: 0.35rem; }
-.oval-frame { width: min(80%, 300px); margin-top: 1rem; }
-.oval-frame svg { width: 100%; height: auto; }
+.dateloc__savedate {
+  width: clamp(150px, 46vw, 220px);
+  height: auto;
+  margin: 0.2rem 0;
+}
+.dateloc__photo {
+  width: min(84%, 300px);
+  height: auto;
+  margin-top: 0.4rem;
+}
+.dateloc__map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  color: var(--ink-soft);
+}
+.dateloc__map img {
+  width: clamp(150px, 48vw, 230px);
+  height: auto;
+  transition: transform 0.3s var(--ease);
+}
+.dateloc__map:hover img,
+.dateloc__map:focus-visible img { transform: translateY(-4px); }
+.dateloc__map-cta {
+  font-family: var(--font-caps);
+  text-transform: uppercase;
+  letter-spacing: var(--track-caps-sm);
+  font-size: var(--fs-caps-sm);
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--sage);
+  padding-bottom: 0.2em;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.dateloc__map:hover .dateloc__map-cta,
+.dateloc__map:focus-visible .dateloc__map-cta {
+  color: var(--sage-deep);
+  border-color: var(--sage-deep);
+}
 
 /* ============================================================
    Timeline
@@ -447,21 +492,24 @@ html {
   color: var(--ink);
 }
 .tl-icon {
-  width: 6rem;
-  height: 6rem;
+  width: 7rem;
+  height: 7rem;
   object-fit: contain;
   margin-bottom: 0.3rem;
 }
 .tl-time {
   font-family: var(--font-caps);
-  letter-spacing: 0.12em;
-  font-size: 0.98rem;
-  color: var(--taupe-deep);
+  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+  color: #9a938a;
+  order: 2;
 }
 .tl-label {
   font-style: italic;
-  font-size: 1.02rem;
-  color: var(--muted);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--ink);
+  order: 1;
 }
 
 /* ============================================================

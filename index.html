@@ -205,8 +205,8 @@
           recepção, além de um espaço para confirmar sua presença.
         </p>
         <p class="welcome__text">
-          Que o amor seja sempre o nosso maior destino, e que este seja apenas o
-          primeiro de muitos capítulos da nossa vida juntos.
+          Que o amor seja sempre o nosso maior destino, e que este seja apenas um 
+          de muitos capítulos da nossa vida juntos.
         </p>
         <p class="welcome__quote">“O casamento eterno é uma jornada eterna.”</p>
         <p class="eyebrow welcome__signoff">Com carinho</p>
@@ -216,7 +216,7 @@
 
     <!-- ---------- Countdown ---------- -->
     <section class="section countdown reveal" id="countdown" aria-label="Contagem regressiva">
-      <svg class="flourish" viewBox="0 0 320 52" aria-hidden="true"><use href="#flourish"/></svg>
+      <span class="cd-arranjo-frame"><img class="cd-arranjo" src="assets/img/arranjo-cima-baixo.PNG" alt="" aria-hidden="true" loading="lazy" /></span>
       <h2 class="script-title countdown__title">A contagem já começou!</h2>
       <div class="countdown__clock" id="clock" role="timer" aria-live="off">
         <div class="cd-unit"><span class="cd-num" data-days>—</span><span class="cd-label">Dias</span></div>
@@ -227,7 +227,7 @@
         <span class="cd-colon">:</span>
         <div class="cd-unit"><span class="cd-num" data-seconds>—</span><span class="cd-label">Segundos</span></div>
       </div>
-      <svg class="flourish flourish--flip" viewBox="0 0 320 52" aria-hidden="true"><use href="#flourish"/></svg>
+      <span class="cd-arranjo-frame"><img class="cd-arranjo cd-arranjo--flip" src="assets/img/arranjo-cima-baixo.PNG" alt="" aria-hidden="true" loading="lazy" /></span>
     </section>
 
     <!-- ---------- The Details (CTA) ---------- -->
@@ -255,7 +255,6 @@
           <use href="#bigHeart" fill="none" stroke="#efe9da" stroke-width="3"/>
         </svg>
       </div>
-      <h2 class="script-title story__title">Nossa História</h2>
       <div class="story__message">
         <p class="story__text">
           Acreditamos que nossa história começou antes mesmo de nascermos e que, pelas
@@ -283,22 +282,19 @@
         <p class="eyebrow">Data</p>
         <p class="info-lead">27 de março de 2027</p>
       </div>
+      <img class="dateloc__savedate" src="assets/img/save-date.png" alt="" aria-hidden="true" loading="lazy" />
       <div class="info-block">
         <p class="eyebrow">Local</p>
         <p class="info-lead">Espaço Capiau</p>
         <p class="info-body">Piracicaba – SP</p>
       </div>
+      <img class="dateloc__photo" src="assets/img/quadro.png" alt="Foto do local do casamento — Espaço Capiau" loading="lazy" />
 
-      <div class="oval-frame" role="img" aria-label="O Espaço Capiau, onde acontecerá a cerimônia">
-        <svg viewBox="0 0 240 180">
-          <ellipse id="ov" cx="120" cy="90" rx="92" ry="66"/>
-          <clipPath id="clipOv"><use href="#ov"/></clipPath>
-          <rect x="26" y="22" width="188" height="136" fill="url(#g-photo)" clip-path="url(#clipOv)"/>
-          <use href="#ov" fill="none" stroke="url(#g-silver)" stroke-width="10"/>
-          <use href="#ov" fill="none" stroke="#6f6a61" stroke-width="1" opacity="0.4"/>
-          <ellipse cx="120" cy="90" rx="80" ry="54" fill="none" stroke="#f4f4f2" stroke-width="1" opacity="0.5"/>
-        </svg>
-      </div>
+      <a class="dateloc__map" href="https://maps.app.goo.gl/C75rxXcJTGdtHBkE7?g_st=ic"
+         target="_blank" rel="noopener" aria-label="Abrir o local do casamento no Google Maps">
+        <img src="assets/img/location.png" alt="Placa indicando o caminho para o casamento" loading="lazy" />
+        <span class="dateloc__map-cta">Ver no mapa</span>
+      </a>
     </section>
 
     <!-- ---------- Timeline ---------- -->
