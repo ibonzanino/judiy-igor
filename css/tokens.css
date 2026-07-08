@@ -1,16 +1,30 @@
 /* ============================================================
    Design tokens — cores, tipografia, espaçamento
    ============================================================ */
+
+/* Citadel Script — fonte premium (uso pessoal), auto-hospedada.
+   Coloque o arquivo em assets/fonts/. Enquanto não existir, cai no fallback (Pinyon Script). */
+@font-face {
+  font-family: "Citadel Script";
+  src: url("../assets/fonts/citadel-script.otf") format("opentype"),
+       url("../assets/fonts/citadel-script.woff2") format("woff2"),
+       url("../assets/fonts/citadel-script.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  /* ---- Paleta (papel marfim, taupe, sálvia, tinta) ---- */
+  /* ---- Paleta (papel marfim, taupe, marrom, tinta) ---- */
   --paper: #f3efe3;
   --paper-2: #ebe6d6;
   --paper-3: #e4ddc9;
   --taupe: #8b8175;
   --taupe-deep: #6f6559;
-  --sage: #9da08a;
-  --sage-deep: #7f8168;
-  --sage-soft: #b9bca8;
+  /* "sage" agora é marrom — o casal pediu sem verde (mantido o nome p/ não quebrar refs) */
+  --sage: #8c8175;
+  --sage-deep: #6e6155;
+  --sage-soft: #c2b7a5;
   --ink: #3e3c37;
   --ink-soft: #57534b;
   --muted: #6e6a61;
@@ -22,10 +36,10 @@
   --silver-3: #7c7d79;
   --silver-hi: #f4f4f2;
 
-  /* ---- Tipografia ---- */
-  --font-script: "Pinyon Script", "Segoe Script", cursive;
-  --font-calli: "Tangerine", "Pinyon Script", cursive;
-  --font-caps: "Cinzel", "Trajan Pro", Georgia, serif;
+  /* ---- Tipografia (3 famílias: script + serifa + serifa caps) ---- */
+  --font-script: "Citadel Script", "Pinyon Script", cursive;
+  --font-calli: "Citadel Script", "Pinyon Script", cursive;
+  --font-caps: "Merriweather", Georgia, serif;
   --font-body: "Cormorant Garamond", "EB Garamond", Georgia, serif;
 
   /* ---- Escala tipográfica ---- */
@@ -35,8 +49,8 @@
   --fs-body-lg: 1.28rem;
   --fs-script-sm: 2.6rem;
   --fs-script: 3.4rem;
-  --fs-calli: 4rem;
-  --fs-countdown: 3rem;
+  --fs-calli: 3.4rem;
+  --fs-countdown: 2.6rem;
 
   /* letter-spacing p/ caps gravadas */
   --track-caps: 0.28em;
@@ -55,8 +69,8 @@
 
 @media (min-width: 40rem) {
   :root {
-    --fs-calli: 4.6rem;
-    --fs-countdown: 3.4rem;
+    --fs-calli: 4rem;
+    --fs-countdown: 2.9rem;
     --section-y: 6rem;
   }
 }

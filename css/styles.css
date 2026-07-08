@@ -63,12 +63,10 @@ html {
   white-space: nowrap;
 }
 
-/* legible ampersand inside script names */
+/* ampersand inside script names — Citadel Script (mesma fonte do nome) */
 .amp {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 0.82em;
+  font-family: var(--font-script);
+  font-style: normal;
 }
 
 .info-lead {
@@ -300,7 +298,11 @@ html {
   opacity: 0.9;
 }
 .cd-arranjo--flip { transform: rotate(180deg); }
-.countdown__title { font-size: calc(var(--fs-calli) * 0.9); }
+.countdown__title {
+  font-size: clamp(1.55rem, 6.6vw, 2.2rem);
+  color: var(--taupe-deep);
+  white-space: nowrap;
+}
 
 .countdown__clock {
   display: flex;
@@ -333,7 +335,7 @@ html {
 }
 .cd-colon {
   font-size: calc(var(--fs-countdown) * 0.8);
-  color: var(--sage);
+  color: var(--taupe);
   line-height: 1.1;
 }
 
@@ -432,51 +434,33 @@ html {
 .dateloc { gap: 1.4rem; }
 .dateloc__title { margin-bottom: 0.6rem; }
 .info-block { display: flex; flex-direction: column; gap: 0.35rem; }
-.dateloc__savedate {
-  width: clamp(150px, 46vw, 220px);
-  height: auto;
-  margin: 0.2rem 0;
-}
 .dateloc__photo {
   width: min(84%, 300px);
   height: auto;
   margin-top: 0.4rem;
 }
-.dateloc__map {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.8rem;
-  color: var(--ink-soft);
-}
-.dateloc__map img {
-  width: clamp(150px, 48vw, 230px);
-  height: auto;
-  transition: transform 0.3s var(--ease);
-}
-.dateloc__map:hover img,
-.dateloc__map:focus-visible img { transform: translateY(-4px); }
-.dateloc__map-cta {
+.dateloc__maplink {
+  display: inline-block;
+  margin-top: 0.9rem;
   font-family: var(--font-caps);
   text-transform: uppercase;
   letter-spacing: var(--track-caps-sm);
   font-size: var(--fs-caps-sm);
   color: var(--ink-soft);
-  border-bottom: 1px solid var(--sage);
+  border-bottom: 1px solid var(--taupe);
   padding-bottom: 0.2em;
   transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
-.dateloc__map:hover .dateloc__map-cta,
-.dateloc__map:focus-visible .dateloc__map-cta {
-  color: var(--sage-deep);
-  border-color: var(--sage-deep);
+.dateloc__maplink:hover,
+.dateloc__maplink:focus-visible {
+  color: var(--taupe-deep);
+  border-color: var(--taupe-deep);
 }
 
 /* ============================================================
    Timeline
    ============================================================ */
-.timeline__title { margin-bottom: 1rem; }
+.timeline__title { margin-bottom: 1rem; color: var(--taupe-deep); }
 .tl-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -507,8 +491,8 @@ html {
 .tl-label {
   font-style: italic;
   font-weight: 500;
-  font-size: 1.2rem;
-  color: var(--ink);
+  font-size: 1.34rem;
+  color: var(--taupe-deep);
   order: 1;
 }
 
