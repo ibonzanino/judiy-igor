@@ -537,7 +537,7 @@ html {
    ============================================================ */
 .rsvp {
   padding-top: 1rem;
-  padding-bottom: calc(var(--section-y) + 1rem);
+  padding-bottom: 0; /* as flores do rodapé encostam no fim da página */
   gap: 4.5rem; /* espaço entre o botão e o logo final */
 }
 .btn--solid {
@@ -569,6 +569,19 @@ html {
   width: min(18%, 64px);
   height: auto;
   margin-inline: auto;
+}
+/* flores do topo espelhadas no rodapé, de ponta a ponta
+   (o flip fica no <img>: o wrapper recebe o transform da animação .reveal) */
+.rodape-flores {
+  align-self: stretch;
+  margin-inline: calc(-1 * var(--gutter));
+  margin-top: -1.5rem;
+}
+.rodape-flores img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scaleY(-1);
 }
 
 /* ---------- Desktop framing ---------- */
