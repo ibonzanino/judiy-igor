@@ -87,21 +87,8 @@
       <ellipse cx="100" cy="132" rx="52.5" ry="76.5" fill="none" stroke="#7c7d79" stroke-width="1" opacity="0.55" />
       <!-- beaded inner ring -->
       <ellipse cx="100" cy="132" rx="46" ry="68" fill="none" stroke="url(#g-silver)" stroke-width="2.2" stroke-dasharray="1 4.4" stroke-linecap="round" />
-      <!-- inner flourish above initials -->
-      <g fill="none" stroke="#9a9b97" stroke-width="1.5" stroke-linecap="round">
-        <path d="M100 100 v5" />
-        <path d="M100 102 c-6 -3 -12 -1 -14 3" />
-        <path d="M100 102 c6 -3 12 -1 14 3" />
-      </g>
-      <!-- initials (engraved serif, embossed) -->
-      <text x="99" y="150" text-anchor="middle" font-family="Merriweather, Georgia, serif" font-weight="600" font-size="42" fill="#f4f4f2" opacity="0.5">J&amp;I</text>
-      <text x="100" y="151" text-anchor="middle" font-family="Merriweather, Georgia, serif" font-weight="600" font-size="42" fill="#7f807c">J&amp;I</text>
-      <!-- inner flourish below initials -->
-      <g fill="none" stroke="#9a9b97" stroke-width="1.5" stroke-linecap="round">
-        <path d="M100 164 v-5" />
-        <path d="M100 162 c-6 3 -12 1 -14 -3" />
-        <path d="M100 162 c6 3 12 1 14 -3" />
-      </g>
+      <!-- logo do casal (355x480) centralizado no campo oval -->
+      <image href="assets/img/logo.webp" x="63" y="82" width="74" height="100" preserveAspectRatio="xMidYMid meet" />
     </symbol>
   </svg>
 
@@ -133,7 +120,8 @@
 
     <!-- ---------- Welcome ---------- -->
     <section class="section welcome reveal" id="welcome" aria-label="Boas-vindas">
-      <img class="welcome__topo" src="assets/img/img-topo.webp" alt="" aria-hidden="true" width="1000" height="1000" decoding="async">
+      <img class="welcome__topo" src="assets/img/flores-topo.webp" alt="" aria-hidden="true" width="1000" height="425" decoding="async">
+      <img class="welcome__logo" src="assets/img/logo.webp" alt="Judiy & Igor" width="355" height="480" decoding="async">
       <div class="locket">
         <img class="locket__photo" src="assets/img/locket.webp"
              alt="Medalhão de coração aberto com as fotos de infância de Judiy e Igor"
@@ -288,8 +276,6 @@
     <!-- ---------- Footer ---------- -->
     <footer class="section footer reveal" aria-label="Rodapé">
       <img class="crest" src="assets/img/logo.webp" alt="" width="355" height="480" loading="lazy" decoding="async">
-      <p class="eyebrow">Com amor</p>
-      <p class="signature">Judiy <span class="amp">&amp;</span> Igor</p>
     </footer>
   </main>
 

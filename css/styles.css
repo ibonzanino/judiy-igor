@@ -252,7 +252,7 @@ html {
    Welcome
    ============================================================ */
 .welcome { padding-top: 0; gap: 1.4rem; }
-/* arte do topo (monograma + flores): de ponta a ponta, encostada no topo da página */
+/* flores do topo: de ponta a ponta, encostadas no topo da página */
 .welcome__topo {
   display: block;
   align-self: stretch;
@@ -261,6 +261,15 @@ html {
   height: auto;
   margin-inline: calc(-1 * var(--gutter));
 }
+/* logo centralizado entre as flores e o medalhão: 1.4rem (gap) + 0.6rem de cada lado */
+.welcome__logo {
+  display: block;
+  width: min(34%, 140px);
+  height: auto;
+  margin-block: 0.6rem;
+}
+/* locket.webp tem ~2.3rem de área vazia acima da fita; compensa p/ o espaço visual ficar igual */
+.welcome .locket { margin-top: -2.3rem; }
 .welcome__message {
   display: flex;
   flex-direction: column;
@@ -414,8 +423,7 @@ html {
    Our Story
    ============================================================ */
 .story {
-  background:
-    linear-gradient(180deg, #8f8579 0%, #857b6f 100%);
+  background: #46382f;
   color: #f3efe4;
   gap: 1.4rem;
 }
@@ -529,7 +537,7 @@ html {
    ============================================================ */
 .rsvp {
   padding-top: 1rem;
-  padding-bottom: 3rem; /* = espaço abaixo do logo (.crest) */
+  padding-bottom: 4.5rem; /* espaço entre o botão e o logo do rodapé */
 }
 .btn--solid {
   font-size: var(--fs-caps);
@@ -565,7 +573,6 @@ html {
   width: min(30%, 110px);
   height: auto;
   margin-inline: auto;
-  margin-bottom: 2.2rem; /* + gap 0.8rem = 3rem, igual ao espaço acima (.rsvp) */
 }
 
 /* ---------- Desktop framing ---------- */
