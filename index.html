@@ -122,37 +122,6 @@
     <section class="section welcome reveal" id="welcome" aria-label="Boas-vindas">
       <img class="welcome__topo" src="assets/img/flores-topo.webp" alt="" aria-hidden="true" width="1000" height="425" decoding="async">
       <img class="welcome__logo" src="assets/img/logo.webp" alt="Judiy & Igor" width="355" height="480" decoding="async">
-      <div class="locket">
-        <img class="locket__photo" src="assets/img/locket.webp"
-             alt="Medalhão de coração aberto com as fotos de infância de Judiy e Igor"
-             onerror="this.hidden=true;this.nextElementSibling.hidden=false;">
-        <svg class="locket__svg" viewBox="0 0 260 200" role="img" aria-label="Medalhão de coração com fotos do casal" hidden>
-          <!-- ribbon -->
-          <path d="M40 44 C90 12 120 40 130 60 C140 40 170 12 220 44"
-                fill="none" stroke="url(#g-ribbon)" stroke-width="9" stroke-linecap="round" opacity="0.95"/>
-          <path d="M40 44 C90 12 120 40 130 60 C140 40 170 12 220 44"
-                fill="none" stroke="#cfc7b3" stroke-width="9" stroke-linecap="round" opacity="0.25"/>
-          <!-- left heart -->
-          <g transform="translate(66 118) rotate(-8)">
-            <path id="heartL" d="M0 -20 C-14 -40 -44 -30 -44 -6 C-44 16 -14 30 0 44 C14 30 44 16 44 -6 C44 -30 14 -40 0 -20 Z"/>
-            <clipPath id="clipL"><use href="#heartL"/></clipPath>
-            <rect x="-46" y="-42" width="92" height="88" fill="url(#g-photo)" clip-path="url(#clipL)"/>
-            <use href="#heartL" fill="none" stroke="url(#g-silver)" stroke-width="6"/>
-            <use href="#heartL" fill="none" stroke="#6f6a61" stroke-width="1" opacity="0.5"/>
-          </g>
-          <!-- right heart -->
-          <g transform="translate(178 112) rotate(8)">
-            <path id="heartR" d="M0 -20 C-14 -40 -44 -30 -44 -6 C-44 16 -14 30 0 44 C14 30 44 16 44 -6 C44 -30 14 -40 0 -20 Z"/>
-            <clipPath id="clipR"><use href="#heartR"/></clipPath>
-            <rect x="-46" y="-42" width="92" height="88" fill="url(#g-photo)" clip-path="url(#clipR)"/>
-            <use href="#heartR" fill="none" stroke="url(#g-silver)" stroke-width="6"/>
-            <use href="#heartR" fill="none" stroke="#6f6a61" stroke-width="1" opacity="0.5"/>
-          </g>
-          <!-- hinge -->
-          <rect x="120" y="96" width="8" height="34" rx="3" fill="url(#g-silver)"/>
-        </svg>
-      </div>
-
       <div class="welcome__message">
         <p class="welcome__text">
           Um novo capítulo da nossa história está prestes a começar…
@@ -199,14 +168,34 @@
 
     <!-- ---------- Our Story ---------- -->
     <section class="section story reveal" id="story" aria-label="Nossa história">
-      <div class="heart-photo" role="img" aria-label="O casal na praia ao entardecer">
-        <svg viewBox="0 0 240 230">
-          <path id="bigHeart" d="M120 58 C96 12 24 24 24 84 C24 138 96 176 120 210 C144 176 216 138 216 84 C216 24 144 12 120 58 Z"/>
-          <clipPath id="clipBig"><use href="#bigHeart"/></clipPath>
-          <rect x="20" y="10" width="200" height="205" fill="url(#g-photo)" clip-path="url(#clipBig)"/>
-          <!-- lace scalloped edge -->
-          <use href="#bigHeart" fill="none" stroke="#f4f1e8" stroke-width="10" stroke-dasharray="2 6" stroke-linecap="round"/>
-          <use href="#bigHeart" fill="none" stroke="#efe9da" stroke-width="3"/>
+      <div class="locket">
+        <img class="locket__photo" src="assets/img/locket.webp"
+             alt="Medalhão de coração aberto com as fotos de infância de Judiy e Igor"
+             onerror="this.hidden=true;this.nextElementSibling.hidden=false;">
+        <svg class="locket__svg" viewBox="0 0 260 200" role="img" aria-label="Medalhão de coração com fotos do casal" hidden>
+          <!-- ribbon -->
+          <path d="M40 44 C90 12 120 40 130 60 C140 40 170 12 220 44"
+                fill="none" stroke="url(#g-ribbon)" stroke-width="9" stroke-linecap="round" opacity="0.95"/>
+          <path d="M40 44 C90 12 120 40 130 60 C140 40 170 12 220 44"
+                fill="none" stroke="#cfc7b3" stroke-width="9" stroke-linecap="round" opacity="0.25"/>
+          <!-- left heart -->
+          <g transform="translate(66 118) rotate(-8)">
+            <path id="heartL" d="M0 -20 C-14 -40 -44 -30 -44 -6 C-44 16 -14 30 0 44 C14 30 44 16 44 -6 C44 -30 14 -40 0 -20 Z"/>
+            <clipPath id="clipL"><use href="#heartL"/></clipPath>
+            <rect x="-46" y="-42" width="92" height="88" fill="url(#g-photo)" clip-path="url(#clipL)"/>
+            <use href="#heartL" fill="none" stroke="url(#g-silver)" stroke-width="6"/>
+            <use href="#heartL" fill="none" stroke="#6f6a61" stroke-width="1" opacity="0.5"/>
+          </g>
+          <!-- right heart -->
+          <g transform="translate(178 112) rotate(8)">
+            <path id="heartR" d="M0 -20 C-14 -40 -44 -30 -44 -6 C-44 16 -14 30 0 44 C14 30 44 16 44 -6 C44 -30 14 -40 0 -20 Z"/>
+            <clipPath id="clipR"><use href="#heartR"/></clipPath>
+            <rect x="-46" y="-42" width="92" height="88" fill="url(#g-photo)" clip-path="url(#clipR)"/>
+            <use href="#heartR" fill="none" stroke="url(#g-silver)" stroke-width="6"/>
+            <use href="#heartR" fill="none" stroke="#6f6a61" stroke-width="1" opacity="0.5"/>
+          </g>
+          <!-- hinge -->
+          <rect x="120" y="96" width="8" height="34" rx="3" fill="url(#g-silver)"/>
         </svg>
       </div>
       <div class="story__message">
