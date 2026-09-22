@@ -4,6 +4,7 @@
 
 /* ---------- Base ---------- */
 body {
+  text-wrap: pretty; /* evita palavra sozinha na última linha (navegadores novos) */
   font-family: var(--font-body);
   font-size: var(--fs-body);
   color: var(--ink);
@@ -289,12 +290,13 @@ html {
   color: var(--ink);
   line-height: 1.55;
   text-align: justify;
-  text-align-last: center;
+  text-align-last: left;
 }
 .welcome__text--em { color: var(--ink); }
 .welcome__quote {
   margin-top: 0.5rem;
   font-style: italic;
+  font-weight: 700;
   font-size: var(--fs-body-lg);
   color: var(--ink);
   line-height: 1.4;
@@ -438,7 +440,7 @@ html {
   line-height: 1.55;
   color: #ece7db;
   text-align: justify;
-  text-align-last: center;
+  text-align-last: left;
 }
 .story__quote {
   margin-top: 0.4rem;
@@ -447,6 +449,7 @@ html {
   align-items: center;
   gap: 0.5rem;
   font-style: italic;
+  font-weight: 700;
   font-size: var(--fs-body-lg);
   line-height: 1.4;
   color: #f6f3ea;
@@ -454,6 +457,7 @@ html {
 .story__cite {
   font-family: var(--font-caps);
   font-style: normal;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.66rem;
