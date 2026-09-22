@@ -14,13 +14,6 @@
     }
   }
 
-  // E-mail de contato (rodapé)
-  var contact = document.getElementById("contact-link");
-  if (contact && cfg.contactEmail) {
-    contact.textContent = cfg.contactEmail;
-    contact.href = "mailto:" + cfg.contactEmail;
-  }
-
   // Título da aba com os nomes
   if (cfg.names) document.title = cfg.names + " · Você está convidado(a)";
 })();

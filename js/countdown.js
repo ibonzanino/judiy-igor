@@ -7,7 +7,6 @@
     days: document.querySelector("[data-days]"),
     hours: document.querySelector("[data-hours]"),
     minutes: document.querySelector("[data-minutes]"),
-    seconds: document.querySelector("[data-seconds]"),
   };
   if (!el.days) return;
 
@@ -19,7 +18,7 @@
 
     if (diff <= 0) {
       el.days.textContent = "0";
-      el.hours.textContent = el.minutes.textContent = el.seconds.textContent = "00";
+      el.hours.textContent = el.minutes.textContent = "00";
       var title = document.querySelector(".countdown__title");
       if (title) title.textContent = "É hoje!";
       stop();
@@ -30,7 +29,6 @@
     el.days.textContent = Math.floor(s / 86400);
     el.hours.textContent = pad(Math.floor((s % 86400) / 3600));
     el.minutes.textContent = pad(Math.floor((s % 3600) / 60));
-    el.seconds.textContent = pad(s % 60);
   }
 
   function start() { if (!timer) { render(); timer = setInterval(render, 1000); } }

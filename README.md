@@ -35,7 +35,7 @@ button falls back to a `mailto:` using `contactEmail`.
 
 ## Photos
 
-**Heart locket (welcome):** uses `assets/img/locket.png` (a transparent-background cut-out works
+**Heart locket (welcome):** uses `assets/img/locket.webp` (a transparent-background cut-out works
 best). Until that file exists, an SVG locket is shown as a fallback. See `assets/img/README.md`.
 
 The other framed photos (Our Story heart, venue oval) still use soft grayscale **placeholders**

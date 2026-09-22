@@ -39,7 +39,7 @@ html {
   text-transform: uppercase;
   letter-spacing: var(--track-caps);
   font-size: var(--fs-caps-sm);
-  color: var(--muted);
+  color: var(--ink);
   font-weight: 500;
 }
 
@@ -48,7 +48,7 @@ html {
   font-weight: 700;
   font-size: var(--fs-calli);
   line-height: 0.95;
-  color: var(--sage-deep);
+  color: var(--ink);
   font-variant-ligatures: common-ligatures;
 }
 
@@ -56,7 +56,7 @@ html {
   font-family: var(--font-script);
   font-size: clamp(1.9rem, 8.5vw, 3.2rem);
   line-height: 1.25;
-  color: var(--sage-deep);
+  color: var(--ink);
   margin-top: 0.15em;
   padding-inline: 0.3em;
   max-width: 100%;
@@ -73,11 +73,11 @@ html {
   font-family: var(--font-body);
   font-style: italic;
   font-size: var(--fs-body-lg);
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 .info-body {
   font-style: italic;
-  color: var(--ink-soft);
+  color: var(--ink);
   line-height: 1.7;
 }
 
@@ -88,15 +88,15 @@ html {
   text-transform: uppercase;
   letter-spacing: var(--track-caps-sm);
   font-size: var(--fs-caps-sm);
-  color: var(--ink-soft);
+  color: var(--ink);
   padding: 0.5em 0.2em 0.35em;
   border-bottom: 1px solid var(--sage);
   transition: color 0.3s var(--ease), border-color 0.3s var(--ease), letter-spacing 0.3s var(--ease);
 }
 .btn:hover,
 .btn:focus-visible {
-  color: var(--sage-deep);
-  border-color: var(--sage-deep);
+  color: var(--ink);
+  border-color: var(--ink);
   letter-spacing: calc(var(--track-caps-sm) + 0.04em);
 }
 
@@ -251,7 +251,16 @@ html {
 /* ============================================================
    Welcome
    ============================================================ */
-.welcome { padding-top: calc(var(--section-y) + 1rem); gap: 1.4rem; }
+.welcome { padding-top: 0; gap: 1.4rem; }
+/* arte do topo (monograma + flores): de ponta a ponta, encostada no topo da página */
+.welcome__topo {
+  display: block;
+  align-self: stretch;
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin-inline: calc(-1 * var(--gutter));
+}
 .welcome__message {
   display: flex;
   flex-direction: column;
@@ -270,17 +279,17 @@ html {
 .welcome__text {
   font-style: italic;
   font-size: 1.24rem;
-  color: var(--ink-soft);
+  color: var(--ink);
   line-height: 1.55;
   text-align: justify;
   text-align-last: center;
 }
-.welcome__text--em { color: var(--taupe-deep); }
+.welcome__text--em { color: var(--ink); }
 .welcome__quote {
   margin-top: 0.5rem;
   font-style: italic;
   font-size: var(--fs-body-lg);
-  color: var(--taupe-deep);
+  color: var(--ink);
   line-height: 1.4;
 }
 .welcome__signoff { margin-top: 0.6rem; }
@@ -293,14 +302,13 @@ html {
 .cd-arranjo {
   display: block;
   width: 100%;
-  aspect-ratio: 5 / 1;
-  object-fit: cover;
+  height: auto;
   opacity: 0.9;
 }
 .cd-arranjo--flip { transform: rotate(180deg); }
 .countdown__title {
   font-size: clamp(1.55rem, 6.6vw, 2.2rem);
-  color: var(--taupe-deep);
+  color: var(--ink);
   white-space: nowrap;
 }
 
@@ -323,19 +331,19 @@ html {
   font-size: var(--fs-countdown);
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  color: var(--taupe-deep);
+  color: var(--ink);
 }
 .cd-label {
   font-family: var(--font-caps);
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.6rem;
-  color: var(--muted);
+  color: var(--ink);
   margin-top: 0.5rem;
 }
 .cd-colon {
   font-size: calc(var(--fs-countdown) * 0.8);
-  color: var(--taupe);
+  color: var(--ink);
   line-height: 1.1;
 }
 
@@ -343,44 +351,64 @@ html {
    The Details (CTA card)
    ============================================================ */
 .details {
-  background:
-    linear-gradient(180deg, rgba(243,239,227,0.35), rgba(243,239,227,0.9)),
-    linear-gradient(135deg, #9a968c 0%, #b7b3a6 45%, #857f74 100%);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  gap: 1.4rem;
+  padding-block: 3.6rem;
 }
-.details__card {
-  background: rgba(247, 244, 235, 0.94);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 2.4rem 1.8rem;
-  box-shadow: 0 20px 40px rgba(70, 66, 58, 0.18);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+.details__title {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-right: -0.3em; /* compensa o tracking da última letra p/ centralizar */
+  color: var(--paper);
 }
-.polaroids {
-  display: flex;
-  gap: 0.6rem;
-  margin-bottom: 0.4rem;
-}
-.polaroid {
-  width: 3.4rem;
-  height: 4.2rem;
-  background: #fff;
-  padding: 4px 4px 12px;
-  box-shadow: 0 6px 12px rgba(70, 66, 58, 0.22);
-}
-.polaroid::before {
-  content: "";
+.details__rule {
   display: block;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(160deg, #c9c4bb, #6f6a61);
+  width: 2.8rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
 }
-.polaroid--1 { transform: rotate(-7deg); }
-.polaroid--2 { transform: rotate(2deg) translateY(-4px); }
-.polaroid--3 { transform: rotate(8deg); }
+.details__text {
+  font-family: var(--font-body);
+  font-size: 1.45rem;
+  line-height: 1.3;
+  color: var(--paper);
+}
+.details__text em { font-style: italic; }
+.btn--light {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1em;
+  margin-top: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--ink);
+  background: var(--paper);
+  padding: 1.15em 2.6em;
+  border: 0;
+  border-radius: 999px;
+  transition: background-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.btn__arrow {
+  font-size: 1.3em;
+  letter-spacing: 0;
+  line-height: 1;
+  transition: transform 0.3s var(--ease);
+}
+.btn--light:hover,
+.btn--light:focus-visible {
+  color: var(--ink);
+  background: #fff;
+  letter-spacing: 0.22em;
+}
+.btn--light:hover .btn__arrow,
+.btn--light:focus-visible .btn__arrow { transform: translateX(4px); }
 
 /* ============================================================
    Our Story
@@ -446,21 +474,21 @@ html {
   text-transform: uppercase;
   letter-spacing: var(--track-caps-sm);
   font-size: var(--fs-caps-sm);
-  color: var(--ink-soft);
+  color: var(--ink);
   border-bottom: 1px solid var(--taupe);
   padding-bottom: 0.2em;
   transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .dateloc__maplink:hover,
 .dateloc__maplink:focus-visible {
-  color: var(--taupe-deep);
-  border-color: var(--taupe-deep);
+  color: var(--ink);
+  border-color: var(--ink);
 }
 
 /* ============================================================
    Timeline
    ============================================================ */
-.timeline__title { margin-bottom: 1rem; color: var(--taupe-deep); }
+.timeline__title { margin-bottom: 1rem; color: var(--ink); }
 .tl-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -485,66 +513,60 @@ html {
   font-family: var(--font-caps);
   letter-spacing: 0.14em;
   font-size: 0.82rem;
-  color: #9a938a;
+  color: var(--ink);
   order: 2;
 }
 .tl-label {
   font-style: italic;
   font-weight: 500;
   font-size: 1.34rem;
-  color: var(--taupe-deep);
+  color: var(--ink);
   order: 1;
 }
 
 /* ============================================================
    RSVP
    ============================================================ */
-.rsvp { padding-block: calc(var(--section-y) + 1rem); }
-.lace-oval {
-  position: relative;
-  width: min(84%, 320px);
-  aspect-ratio: 4 / 5;
-  display: grid;
-  place-items: center;
+.rsvp {
+  padding-top: 1rem;
+  padding-bottom: 3rem; /* = espaço abaixo do logo (.crest) */
 }
-.lace-oval__svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  color: var(--sage);
+.btn--solid {
+  font-size: var(--fs-caps);
+  letter-spacing: 0.08em;
+  text-transform: none;
+  color: #fff;
+  background: var(--ink);
+  padding: 1em 2.2em;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px -8px rgba(10, 45, 61, 0.55);
+  transition: background-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
-.lace-oval__content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-}
-.rsvp__title {
-  font-size: clamp(1.7rem, 8.5vw, 2.4rem);
-  line-height: 1.15;
+.btn--solid:hover,
+.btn--solid:focus-visible {
+  color: #fff;
+  background: #134359;
+  letter-spacing: 0.08em;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px -10px rgba(10, 45, 61, 0.6);
 }
 
 /* ============================================================
    Footer
    ============================================================ */
 .footer {
+  padding-top: 0;
   padding-bottom: calc(var(--section-y) + 1rem);
   gap: 0.8rem;
 }
 .crest {
-  width: min(46%, 160px);
+  display: block;
+  width: min(30%, 110px);
   height: auto;
-  color: var(--sage);
+  margin-inline: auto;
+  margin-bottom: 2.2rem; /* + gap 0.8rem = 3rem, igual ao espaço acima (.rsvp) */
 }
-.footer__contact {
-  font-style: italic;
-  color: var(--ink-soft);
-  line-height: 1.7;
-}
-.footer__contact a { border-bottom: 1px solid var(--sage); }
-.footer__contact a:hover { color: var(--sage-deep); }
 
 /* ---------- Desktop framing ---------- */
 @media (min-width: 40rem) {
