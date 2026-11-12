@@ -549,6 +549,11 @@ html {
   height: auto;
   margin-top: 0.4rem;
 }
+/* ícone da capela: silhueta, bem menor que a antiga moldura com foto */
+.dateloc__photo--capela {
+  width: min(40%, 150px);
+  margin-top: 1rem;
+}
 .dateloc__maplink {
   display: inline-block;
   margin-top: 0.9rem;

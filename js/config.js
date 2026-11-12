@@ -10,7 +10,7 @@ window.WEDDING = {
 
   /* Data/hora do casamento no formato ISO (fuso local).
      Formato: "AAAA-MM-DDTHH:MM:SS". Usado pelo countdown. */
-  weddingDate: "2027-03-27T08:00:00",
+  weddingDate: "2027-03-27T09:00:00",
 
   /* Link do RSVP — Google Form (ou deixe vazio "" para usar o mailto abaixo). */
   rsvpUrl: "https://forms.gle/your-rsvp-form-id",
