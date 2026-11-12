@@ -2,7 +2,7 @@
 
 Uma foto **quadrada** por presente (ex.: 600×600), em `.webp`, com exatamente estes nomes.
 O nome de cada arquivo é definido no campo `img` em `js/presentes.js`.
-Enquanto um arquivo não existir, o cartão mostra um ícone de presente no lugar.
+Enquanto um arquivo não existir, o cartão mostra o ícone de presente (`assets/img/presente.webp`).
 
 - `potes-hermeticos.webp` — Jogo de potes herméticos
 - `sanduicheira.webp` — Sanduicheira e grill
@@ -26,7 +26,6 @@ Enquanto um arquivo não existir, o cartão mostra um ícone de presente no luga
 - `jogo-de-cama.webp` — Jogo de cama queen
 - `jantar-lua-de-mel.webp` — Jantar romântico na lua de mel
 - `passeio-lua-de-mel.webp` — Passeio na lua de mel
-- `passagem.webp` — Cota da passagem
 - `primeiros-socorros.webp` — Kit primeiros socorros: Igor na cozinha
 - `internet.webp` — Primeira conta de internet
 - `gasolina.webp` — Gasolina para visitar os sogros

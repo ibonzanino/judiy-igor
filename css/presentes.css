@@ -33,7 +33,12 @@
   gap: 1.2rem;
   width: 100%;
 }
-.gift-group__title { font-size: clamp(2rem, 9vw, 2.6rem); }
+/* folga p/ os floreios da fonte script: o título tem .reveal (camada própria),
+   e o Safari corta o que passa da caixa — sem padding, o "C" de "Cozinha" some */
+.gift-group__title {
+  font-size: clamp(2rem, 9vw, 2.6rem);
+  padding: 0.2em 0.4em 0.1em;
+}
 .gift-list {
   display: flex;
   flex-direction: column;
@@ -86,14 +91,18 @@
   height: 100%;
   object-fit: cover;
 }
-.gift__placeholder {
-  display: none;
-  width: 52%;
-  height: auto;
-  color: var(--sage-soft);
+/* sem foto: o ícone redondo de presente ocupa a caixinha, sem fundo nem borda */
+.gift__placeholder { display: none; }
+.gift__media.is-empty {
+  background: none;
+  box-shadow: none;
+  border-radius: 50%;
 }
-.gift__media.is-empty { background: rgba(139, 129, 117, 0.07); }
-.gift__media.is-empty .gift__placeholder { display: block; }
+.gift__media.is-empty .gift__placeholder {
+  display: block;
+  width: 88%;
+  height: auto;
+}
 .gift__text {
   display: flex;
   flex-direction: column;

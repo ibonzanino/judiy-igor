@@ -47,7 +47,6 @@ var GIFTS = [
     items: [
       { name: "Jantar romântico na lua de mel", desc: "Com vista bonita e sem ninguém precisar lavar a louça.", value: 250, img: "jantar-lua-de-mel.webp" },
       { name: "Passeio na lua de mel", desc: "Um dia de aventura que vamos lembrar para sempre.", value: 300, img: "passeio-lua-de-mel.webp" },
-      { name: "Cota da passagem", desc: "Um pedacinho da viagem dos nossos sonhos.", value: 400, img: "passagem.webp" },
     ],
   },
   {
@@ -135,9 +134,7 @@ var GIFTS = [
       '<div class="gift__media">' +
       '<img alt="" loading="lazy" decoding="async">' +
       // ícone de presente: aparece enquanto a foto não existir
-      '<svg class="gift__placeholder" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">' +
-      '<rect x="8" y="20" width="32" height="20" rx="1.5"/><rect x="5" y="13" width="38" height="7" rx="1.5"/>' +
-      '<path d="M24 13v27M24 13c-3-6-11-7-11-2s8 2 11 2zM24 13c3-6 11-7 11-2s-8 2-11 2z"/></svg>' +
+      '<img class="gift__placeholder" src="assets/img/presente.webp" alt="" aria-hidden="true" width="400" height="400" decoding="async">' +
       "</div>" +
       '<div class="gift__text"><h3 class="gift__name"></h3><p class="gift__desc"></p></div>' +
       "</div>" +
