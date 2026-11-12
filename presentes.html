@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Judiy &amp; Igor · Lista de Presentes</title>
+  <meta name="description" content="Lista de presentes de Judiy & Igor — presenteie os noivos via PIX." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,700&family=Merriweather:wght@300;400;700&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/presentes.css" />
+</head>
+<body>
+  <main class="page" id="page">
+
+    <!-- ---------- Cabeçalho ---------- -->
+    <section class="section gifts-head reveal" aria-label="Lista de presentes">
+      <img class="welcome__topo" src="assets/img/flores-topo.webp" alt="" aria-hidden="true" width="1000" height="425" decoding="async">
+      <a class="welcome__logo" href="index.html" aria-label="Voltar ao convite"><img src="assets/img/logo.webp" alt="Judiy & Igor" width="355" height="480" decoding="async"></a>
+      <h1 class="script-title gifts-head__title">Lista de Presentes</h1>
+      <div class="gifts-head__message">
+        <p class="welcome__text">
+          Sua presença é o nosso maior presente! Mas, se quiser nos ajudar a montar
+          o nosso primeiro lar, separamos algumas sugestões (e umas brincadeiras&nbsp;também).
+        </p>
+        <p class="welcome__text">
+          Escolha um presente e envie o valor via PIX, direto para nós — a gente cuida
+          da compra. Cada carinho será lembrado com muita&nbsp;gratidão.
+        </p>
+      </div>
+    </section>
+
+    <!-- ---------- Lista (preenchida por js/presentes.js) ---------- -->
+    <section class="section gifts" aria-label="Presentes">
+      <div class="gift-groups" id="gift-list"></div>
+    </section>
+
+    <!-- ---------- Rodapé ---------- -->
+    <section class="section rsvp gifts-foot reveal" aria-label="Rodapé">
+      <a class="text-link" href="index.html">Voltar ao convite</a>
+      <img class="crest" src="assets/img/logo.webp" alt="" width="355" height="480" decoding="async">
+      <div class="rodape-flores" aria-hidden="true"><img src="assets/img/flores-topo.webp" alt="" width="1000" height="425" loading="lazy" decoding="async"></div>
+    </section>
+  </main>
+
+  <!-- ---------- Modal PIX ---------- -->
+  <dialog class="pix" id="pix-dialog" aria-labelledby="pix-title">
+    <div class="pix__body">
+      <button class="pix__close" type="button" aria-label="Fechar">&times;</button>
+      <p class="eyebrow">Você escolheu</p>
+      <h2 class="pix__title" id="pix-title" tabindex="-1" autofocus></h2>
+      <p class="pix__value" id="pix-value"></p>
+
+      <div class="pix__qr" id="pix-qr" data-pix-ready></div>
+      <p class="pix__hint" data-pix-ready>
+        No app do seu banco, escolha <em>PIX&nbsp;→ Ler&nbsp;QR&nbsp;code</em>, ou copie o código
+        abaixo e use <em>PIX Copia e&nbsp;Cola</em>.
+      </p>
+      <button class="btn btn--solid" id="pix-copy" type="button" data-pix-ready>Copiar código PIX</button>
+      <p class="pix__key" data-pix-ready>Chave PIX: <span id="pix-key"></span></p>
+
+      <p class="pix__hint" data-pix-soon hidden>Os dados do PIX estarão disponíveis em breve. Volte aqui mais pertinho da&nbsp;data!</p>
+
+      <p class="signature pix__thanks">Muito obrigado!</p>
+    </div>
+  </dialog>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/vendor/qrcode.js"></script>
+  <script src="js/presentes.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

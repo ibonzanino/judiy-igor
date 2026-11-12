@@ -17,4 +17,17 @@ window.WEDDING = {
 
   /* E-mail de contato (rodapé + fallback de RSVP via mailto). */
   contactEmail: "chamberlainwedding@gmail.com",
+
+  /* PIX da lista de presentes (presentes.html). O QR code e o "copia e cola"
+     são gerados no navegador a partir destes dados.
+     - key:  chave PIX exatamente como cadastrada no banco
+             (CPF só números · e-mail · celular no formato "+5519999999999" · chave aleatória)
+     - name: nome do recebedor (até 25 letras, sem acento)
+     - city: cidade do recebedor (até 15 letras, sem acento)
+     Enquanto key estiver vazia, a página mostra "PIX em breve". */
+  pix: {
+    key: "+5519991198065",
+    name: "Judiy e Igor",
+    city: "Piracicaba",
+  },
 };

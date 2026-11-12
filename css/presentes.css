@@ -1,0 +1,218 @@
+/* ============================================================
+   presentes.css — página da lista de presentes (presentes.html)
+   Reaproveita tokens/estilos do convite; aqui só o que é novo.
+   ============================================================ */
+
+/* ---------- Cabeçalho ---------- */
+.gifts-head { padding-top: 0; padding-bottom: 2.4rem; gap: 1.4rem; }
+.gifts-head .welcome__logo img { display: block; width: 100%; height: auto; }
+.gifts-head__title {
+  font-size: clamp(2.3rem, 10.5vw, 3.4rem);
+  white-space: nowrap;
+}
+.gifts-head__message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: min(92%, 34ch);
+}
+
+/* ---------- Lista ---------- */
+.gifts { padding-top: 0; padding-bottom: 3.5rem; }
+.gift-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  width: 100%;
+  align-items: center;
+}
+.gift-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+}
+.gift-group__title { font-size: clamp(2rem, 9vw, 2.6rem); }
+.gift-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 100%;
+  max-width: 24rem;
+}
+
+/* cada presente = um cartãozinho de papelaria (mesmo fio duplo do envelope) */
+.gift {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.5rem 1.5rem 1.15rem;
+  text-align: left;
+  border-radius: var(--radius);
+  background: radial-gradient(120% 80% at 50% 0%, #fffdf8 0%, #f9f5ea 70%, #f3eee0 100%);
+  box-shadow: 0 12px 26px -18px rgba(70, 60, 42, 0.45), 0 1px 2px rgba(70, 60, 42, 0.08);
+}
+.gift::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(139, 129, 117, 0.35);
+  outline: 1px solid rgba(139, 129, 117, 0.18);
+  outline-offset: -4px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.gift__name {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.34rem;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.gift__desc {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.gift__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.55rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(139, 129, 117, 0.25);
+}
+.gift__price {
+  font-family: var(--font-caps);
+  font-size: 0.86rem;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+}
+.gift--free .gift__price {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.1rem;
+  letter-spacing: 0;
+}
+.gift__btn {
+  flex-shrink: 0;
+  font-family: var(--font-caps);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #fff;
+  background: var(--ink);
+  padding: 0.85em 1.3em 0.8em;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px -8px rgba(10, 45, 61, 0.55);
+  transition: background-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.gift__btn:hover,
+.gift__btn:focus-visible {
+  background: #134359;
+  transform: translateY(-1px);
+}
+
+/* ---------- Rodapé ---------- */
+.text-link {
+  display: inline-block;
+  font-family: var(--font-caps);
+  text-transform: uppercase;
+  letter-spacing: var(--track-caps-sm);
+  font-size: var(--fs-caps-sm);
+  color: var(--ink);
+  border-bottom: 1px solid var(--taupe);
+  padding-bottom: 0.2em;
+  transition: border-color 0.3s var(--ease);
+}
+.text-link:hover,
+.text-link:focus-visible { border-color: var(--ink); }
+.gifts-foot { gap: 3.5rem; }
+
+/* ---------- Modal PIX ---------- */
+.pix {
+  width: min(calc(100vw - 2rem), 24rem);
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  color: var(--ink);
+  background: radial-gradient(120% 70% at 50% 0%, #fffdf8 0%, var(--paper) 100%);
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.55);
+  overflow: auto;
+}
+.pix::backdrop {
+  background: rgba(13, 12, 11, 0.62);
+  backdrop-filter: blur(2px);
+}
+.pix[open] { animation: pix-in 0.45s var(--ease); }
+@keyframes pix-in {
+  from { opacity: 0; transform: translateY(18px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.pix__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2.2rem 1.5rem 1.6rem;
+  text-align: center;
+}
+.pix__close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.7rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--taupe-deep);
+}
+.pix__close:hover,
+.pix__close:focus-visible { color: var(--ink); }
+.pix__title {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+.pix__title:focus { outline: none; } /* recebe o foco ao abrir (leitor de tela), sem moldura */
+.pix__value {
+  font-family: var(--font-caps);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.3rem;
+}
+.pix__qr {
+  width: min(62vw, 210px);
+  aspect-ratio: 1;
+  padding: 12px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(139, 129, 117, 0.3);
+}
+.pix__qr svg { display: block; width: 100%; height: 100%; }
+.pix__hint {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  max-width: 30ch;
+}
+.pix__key {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  word-break: break-all;
+}
+.pix [hidden] { display: none; }
+.pix__thanks { font-size: clamp(1.8rem, 8vw, 2.4rem); margin-top: 0.2rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pix[open] { animation: none; }
+}
