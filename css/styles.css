@@ -423,6 +423,10 @@ html {
   font-size: clamp(1.55rem, 6.6vw, 2.2rem);
   color: var(--ink);
   white-space: nowrap;
+  /* Safari corta as pernas de "g", "j" e "ç" em camada animada (.reveal):
+     folga embaixo, compensada pela margem negativa */
+  padding-bottom: 0.45em;
+  margin-bottom: -0.45em;
 }
 
 .countdown__clock {
@@ -544,6 +548,8 @@ html {
 .dateloc { gap: 1.4rem; }
 .dateloc__title { margin-bottom: 0.6rem; }
 .info-block { display: flex; flex-direction: column; gap: 0.35rem; }
+/* data e nome do local em negrito (sem os rótulos "Data"/"Local") */
+.dateloc .info-lead { font-weight: 700; }
 .dateloc__photo {
   width: min(84%, 300px);
   height: auto;

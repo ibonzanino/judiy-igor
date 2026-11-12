@@ -34,10 +34,13 @@
   width: 100%;
 }
 /* folga p/ os floreios da fonte script: o título tem .reveal (camada própria),
-   e o Safari corta o que passa da caixa — sem padding, o "C" de "Cozinha" some */
+   e o Safari corta o que passa da caixa — sem padding, o "C" de "Cozinha" some
+   e a perna do "z" (e do "p" de "Só para rir") é cortada embaixo.
+   A folga de baixo é compensada pela margem negativa: o espaçamento não muda. */
 .gift-group__title {
   font-size: clamp(2rem, 9vw, 2.6rem);
-  padding: 0.2em 0.4em 0.1em;
+  padding: 0.2em 0.4em 0.5em;
+  margin-bottom: -0.4em;
 }
 .gift-list {
   display: flex;
