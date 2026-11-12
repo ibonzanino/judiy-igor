@@ -129,8 +129,25 @@ html {
   background:
     radial-gradient(100% 75% at 50% 40%, #33322e 0%, #1c1b18 55%, #0d0c0b 100%);
   opacity: 1;
-  transition: opacity 0.7s var(--ease) 0.5s;
+  /* espera a aba abrir, o cartão sair e o envelope sair de cena */
+  transition: opacity 0.6s var(--ease) 2.1s;
 }
+/* o envelope sai de cena antes do fundo esmaecer — assim a página
+   nunca aparece "através" do envelope semitransparente */
+.gate.is-leaving .envelope {
+  opacity: 0;
+  transform: translateY(-14px) scale(0.97);
+  transition: opacity 0.4s ease 1.85s, transform 0.5s var(--ease) 1.85s;
+}
+.gate__eyebrow,
+.gate__names,
+.gate__divider,
+.gate__hint { transition: opacity 0.4s var(--ease); }
+.gate.is-leaving :is(.gate__eyebrow, .gate__names, .gate__divider, .gate__hint) {
+  opacity: 0;
+  animation: none;
+}
+
 .gate.is-leaving {
   opacity: 0;
   pointer-events: none;
@@ -180,42 +197,75 @@ html {
 }
 .envelope:hover { transform: translateY(-5px); }
 
-.envelope__pocket {
+/* Camadas, de trás pra frente (como um envelope de papel visto pelo lado da aba):
+   back (interior) → card (cartão dentro) → front (dobras laterais) → lip (dobra de baixo) → flap (aba + selo) */
+.envelope__back {
   position: absolute;
   inset: 0;
-  border-radius: 10px;
-  background:
-    radial-gradient(120% 90% at 50% 0%, #fdfbf5 0%, #f4eee0 55%, #ece5d3 100%);
-  box-shadow: inset 0 0 30px rgba(150, 142, 122, 0.18);
-  overflow: hidden;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #ddd5c1 0%, #e8e1cf 45%, #efe9da 100%);
+  box-shadow: inset 0 10px 16px -10px rgba(80, 70, 52, 0.28);
   z-index: 1;
 }
-.envelope__pocket::before,
-.envelope__pocket::after {
-  /* front pocket fold seams */
+
+/* cartão do convite — sai de dentro quando a aba abre */
+.envelope__card {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: 6%;
+  height: 88%;
+  border-radius: 3px;
+  background: radial-gradient(120% 80% at 50% 0%, #fffdf8 0%, #f9f5ea 70%, #f3eee0 100%);
+  box-shadow: 0 -2px 10px rgba(80, 70, 52, 0.18);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  /* logo logo abaixo das flores (faixa = 86% da largura × 265/1000) */
+  padding-top: 24.5%;
+  transition: transform 0.95s var(--ease) 0.75s;
+}
+/* mesmas flores da home — só a parte de cima (os botões), com as hastes
+   esmaecendo, para caber no trecho do cartão que sai do envelope */
+.envelope__card-flores {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1000 / 265;
+  object-fit: cover;
+  object-position: top;
+  -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+  z-index: 1;
+}
+.envelope__card::before {
+  /* fio duplo de papelaria */
   content: "";
   position: absolute;
-  bottom: 0;
-  width: 52%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent 49.4%, rgba(150, 142, 122, 0.22) 50%, transparent 50.6%);
+  inset: 5px;
+  border: 1px solid rgba(139, 129, 117, 0.35);
+  outline: 1px solid rgba(139, 129, 117, 0.18);
+  outline-offset: -4px;
+  border-radius: 2px;
 }
-.envelope__pocket::before { left: 0; }
-.envelope__pocket::after { right: 0; transform: scaleX(-1); }
+.envelope__card-logo {
+  width: 17%;
+  height: auto;
+  align-self: flex-start;
+}
+.envelope.is-open .envelope__card { transform: translateY(-47%); }
 
-.envelope__medallion {
+/* dobras laterais: tudo menos o triângulo de cima (a boca do envelope) */
+.envelope__front {
   position: absolute;
-  left: 50%;
-  top: 53%;
-  width: 33%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  filter: drop-shadow(0 4px 6px rgba(90, 82, 66, 0.35));
-  transition: transform 0.7s var(--ease), opacity 0.6s var(--ease);
-}
-.envelope.is-open .envelope__medallion {
-  transform: translate(-50%, -92%) scale(0.9);
-  opacity: 0;
+  inset: 0;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 50% 52%, 100% 0, 100% 100%, 0 100%);
+  background: radial-gradient(120% 90% at 50% 0%, #fdfbf5 0%, #f4eee0 55%, #ece5d3 100%);
+  z-index: 3;
 }
 
 .envelope__lip {
@@ -226,9 +276,10 @@ html {
   height: 56%;
   clip-path: polygon(0 100%, 100% 100%, 50% 0);
   background: linear-gradient(180deg, #f2ecdd 0%, #e5ddca 100%);
-  z-index: 2;
+  z-index: 4;
 }
 
+/* aba: duas faces (fora / forro) + o selo preso na ponta */
 .envelope__flap {
   position: absolute;
   left: 0;
@@ -236,18 +287,68 @@ html {
   width: 100%;
   height: 55%;
   transform-origin: top center;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  background: linear-gradient(178deg, #f8f4e9 0%, #efe8d7 62%, #e2dac6 100%);
-  filter: drop-shadow(0 3px 5px rgba(120, 112, 94, 0.28));
-  z-index: 5;
+  transform-style: preserve-3d;
   transform: rotateX(0deg);
-  transition: transform 0.95s var(--ease), z-index 0s linear 0.5s;
-  backface-visibility: hidden;
+  z-index: 6;
+  transition: transform 1s cubic-bezier(0.55, 0.05, 0.3, 1), z-index 0s linear 0.55s;
 }
 .envelope.is-open .envelope__flap {
-  transform: rotateX(-178deg);
+  transform: rotateX(-180deg);
   z-index: 0;
 }
+.envelope__flap-outer,
+.envelope__flap-inner {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.envelope__flap-outer {
+  background: linear-gradient(178deg, #f8f4e9 0%, #efe8d7 62%, #e2dac6 100%);
+}
+.envelope__flap-inner {
+  /* forro da aba — aparece quando ela vira */
+  background: linear-gradient(0deg, #e9e2d0 0%, #ddd5c1 100%);
+  /* espelha na horizontal (o triângulo é simétrico): a própria aba já
+     vira na vertical ao abrir — espelhar em X aqui deixava a ponta pra baixo */
+  transform: rotateY(180deg);
+}
+
+/* lacre de cera — preso na ponta da aba, sai inteiro junto com ela */
+.envelope__seal {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 22%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) translateZ(1px);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  filter:
+    drop-shadow(0 1px 1px rgba(18, 32, 70, 0.35))
+    drop-shadow(0 4px 7px rgba(70, 60, 42, 0.32));
+}
+.envelope__seal img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* brilho que passa pela cera no hover */
+.envelope__seal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, 0.34) 50%, transparent 62%) no-repeat;
+  background-size: 260% 100%;
+  background-position: 130% 0;
+  -webkit-mask: url("../assets/img/selo.webp") center / contain no-repeat;
+  mask: url("../assets/img/selo.webp") center / contain no-repeat;
+  transition: background-position 0.9s var(--ease);
+}
+.envelope:hover .envelope__seal::after { background-position: -30% 0; }
 
 /* ============================================================
    Welcome

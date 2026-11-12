@@ -61,35 +61,6 @@
         <path d="M132 29 c3 -7 -4 -12 -10 -9" />
       </g>
     </symbol>
-
-    <!-- Ornate silver medallion (envelope seal) -->
-    <symbol id="medallion" viewBox="0 0 200 264">
-      <g fill="none" stroke="url(#g-silver)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <!-- top fleur-de-lis -->
-        <path d="M100 22 C95 32 99 43 100 46 C101 43 105 32 100 22 Z" />
-        <path d="M100 46 C91 40 82 45 86 53 C89 59 98 56 100 50" />
-        <path d="M100 46 C109 40 118 45 114 53 C111 59 102 56 100 50" />
-        <path d="M87 51 H113" />
-        <path d="M100 50 V57" />
-        <!-- bottom fleur-de-lis -->
-        <path d="M100 242 C95 232 99 221 100 218 C101 221 105 232 100 242 Z" />
-        <path d="M100 218 C91 224 82 219 86 211 C89 205 98 208 100 214" />
-        <path d="M100 218 C109 224 118 219 114 211 C111 205 102 208 100 214" />
-        <path d="M87 213 H113" />
-        <path d="M100 214 V207" />
-        <!-- side scrolls -->
-        <path d="M36 132 c-11 -6 -11 -19 2 -19 M36 132 c-11 6 -11 19 2 19" />
-        <path d="M164 132 c11 -6 11 -19 -2 -19 M164 132 c11 6 11 19 -2 19" />
-      </g>
-      <!-- oval bezel (silver bevel + cream field) -->
-      <ellipse cx="100" cy="132" rx="58" ry="82" fill="#efe9da" stroke="url(#g-silver)" stroke-width="11" />
-      <ellipse cx="100" cy="132" rx="63.5" ry="87.5" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.55" />
-      <ellipse cx="100" cy="132" rx="52.5" ry="76.5" fill="none" stroke="#7c7d79" stroke-width="1" opacity="0.55" />
-      <!-- beaded inner ring -->
-      <ellipse cx="100" cy="132" rx="46" ry="68" fill="none" stroke="url(#g-silver)" stroke-width="2.2" stroke-dasharray="1 4.4" stroke-linecap="round" />
-      <!-- logo do casal (355x480) centralizado no campo oval -->
-      <image href="assets/img/logo.webp" x="63" y="82" width="74" height="100" preserveAspectRatio="xMidYMid meet" />
-    </symbol>
   </svg>
 
   <!-- ======================= ENVELOPE GATE ======================= -->
@@ -99,10 +70,19 @@
       <h1 class="gate__names">Judiy <span class="amp">&amp;</span> Igor</h1>
 
       <button class="envelope" id="envelope" type="button" aria-label="Toque no envelope para abrir o convite">
+        <span class="envelope__back"></span>
+        <span class="envelope__card">
+          <img class="envelope__card-flores" src="assets/img/flores-topo.webp" alt="" width="1000" height="425" decoding="async" />
+          <img class="envelope__card-logo" src="assets/img/logo.webp" alt="" width="355" height="480" decoding="async" />
+        </span>
+        <span class="envelope__front"></span>
         <span class="envelope__lip"></span>
-        <span class="envelope__pocket"></span>
-        <span class="envelope__flap"></span>
-        <svg class="envelope__medallion" viewBox="0 0 200 264" aria-hidden="true"><use href="#medallion" /></svg>
+        <!-- aba com duas faces; o lacre de cera fica preso na ponta e sobe junto -->
+        <span class="envelope__flap">
+          <span class="envelope__flap-outer"></span>
+          <span class="envelope__flap-inner"></span>
+          <span class="envelope__seal"><img src="assets/img/selo.webp" alt="" width="480" height="480" decoding="async" /></span>
+        </span>
       </button>
 
       <svg class="gate__divider" viewBox="0 0 220 14" aria-hidden="true">

@@ -52,9 +52,11 @@
   .gate,
   .gate__hint,
   .envelope,
-  .envelope__flap {
+  .envelope__flap,
+  .envelope__card {
     transition: opacity 0.3s ease !important;
     animation: none !important;
   }
-  .envelope.is-open .envelope__flap { transform: rotateX(-178deg); }
+  .envelope.is-open .envelope__flap { transform: rotateX(-180deg); }
+  .envelope__seal::after { display: none; }
 }
