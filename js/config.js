@@ -26,7 +26,7 @@ window.WEDDING = {
      - city: cidade do recebedor (até 15 letras, sem acento)
      Enquanto key estiver vazia, a página mostra "PIX em breve". */
   pix: {
-    key: "+5519991198065",
+    key: "d0ba11ee-b8f4-4d90-a8f7-15bb8bd9462d",
     name: "Judiy e Igor",
     city: "Piracicaba",
   },
