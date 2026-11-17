@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/rsvp.css" />
 </head>
 <body class="is-locked">
 
@@ -185,7 +186,7 @@
 
     <!-- ---------- RSVP ---------- -->
     <section class="section rsvp reveal" id="rsvp" aria-label="RSVP">
-      <a class="btn btn--solid" id="rsvp-btn" href="#" target="_blank" rel="noopener">Confirmar presença!</a>
+      <button class="btn btn--solid" id="rsvp-btn" type="button" aria-haspopup="dialog">Confirmar presença!</button>
     </section>
 
     <!-- ---------- Presentes ---------- -->
@@ -256,9 +257,67 @@
     </section>
   </main>
 
+  <!-- ---------- Modal RSVP (preenchido por js/rsvp.js) ---------- -->
+  <dialog class="modal rsvp-modal" id="rsvp-dialog" aria-labelledby="rsvp-title">
+    <div class="modal__body">
+      <button class="modal__close" type="button" aria-label="Fechar">&times;</button>
+      <p class="eyebrow">Confirmação de presença</p>
+      <h2 class="rsvp-modal__title" id="rsvp-title" tabindex="-1">Confirmar presença</h2>
+
+      <!-- carregando o convite -->
+      <div class="rsvp-step" data-step="loading">
+        <p class="rsvp-modal__hint">Buscando seu convite…</p>
+      </div>
+
+      <!-- sem código: busca pelo nome -->
+      <form class="rsvp-step" data-step="search" novalidate hidden>
+        <p class="rsvp-modal__hint" data-search-msg aria-live="polite"></p>
+        <label class="rsvp-field">
+          <span>Nome e sobrenome</span>
+          <input type="text" name="q" autocomplete="name" enterkeyhint="search" />
+        </label>
+        <button class="btn btn--solid" type="submit">Buscar convite</button>
+        <ul class="rsvp-results" data-results></ul>
+        <p class="rsvp-modal__help">Não encontrou? <a data-contact>Fale com a gente</a>.</p>
+      </form>
+
+      <!-- convite encontrado: quem vai -->
+      <form class="rsvp-step" data-step="form" novalidate hidden>
+        <p class="rsvp-modal__hint" data-prev hidden></p>
+        <div class="rsvp-guests" data-guests></div>
+        <label class="rsvp-field">
+          <span>Restrição alimentar <em>(opcional)</em></span>
+          <input type="text" name="restricao" maxlength="300" />
+        </label>
+        <label class="rsvp-field">
+          <span>Recado para os noivos <em>(opcional)</em></span>
+          <textarea name="recado" rows="3" maxlength="500"></textarea>
+        </label>
+        <p class="rsvp-error" data-form-error role="alert" hidden></p>
+        <button class="btn btn--solid" type="submit">Confirmar</button>
+        <button class="rsvp-link" type="button" data-not-me>Não é você?</button>
+      </form>
+
+      <!-- resposta enviada -->
+      <div class="rsvp-step" data-step="done" hidden>
+        <p class="rsvp-modal__hint" data-done-msg></p>
+        <a class="dateloc__maplink" href="presentes.html">Ver lista de presentes</a>
+        <p class="signature rsvp-modal__thanks">Obrigado!</p>
+      </div>
+
+      <!-- avisos: em breve, prazo encerrado, erro -->
+      <div class="rsvp-step" data-step="notice" hidden>
+        <p class="rsvp-modal__hint" data-notice-msg></p>
+        <button class="btn btn--solid" type="button" data-retry hidden>Tentar de novo</button>
+        <p class="rsvp-modal__help"><a data-contact>Fale com a gente</a></p>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Scripts -->
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/rsvp.js"></script>
   <script src="js/countdown.js"></script>
   <script src="js/envelope.js"></script>
   <script src="js/reveal.js"></script>

@@ -30,8 +30,10 @@ Almost everything lives in two files:
 
 ### RSVP
 
-Set `rsvpUrl` in `config.js` to your Google Form URL. If you leave it blank, the RSVP
-button falls back to a `mailto:` using `contactEmail`.
+The RSVP button opens a modal (`js/rsvp.js`) backed by a Google Sheet + Apps Script web
+app. Each invite gets a personal link (`?c=CODE`); guests without a code can look their
+invite up by full name. Setup (in Portuguese): [`apps-script/README.md`](apps-script/README.md).
+Set `rsvp.api` and `rsvp.deadline` in `config.js`.
 
 ## Photos
 

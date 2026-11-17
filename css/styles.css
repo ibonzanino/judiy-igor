@@ -692,3 +692,55 @@ html {
     border: 1px solid rgba(207, 199, 179, 0.6);
   }
 }
+
+/* ============================================================
+   Modal (base compartilhada: PIX em presentes.html, RSVP no index)
+   ============================================================ */
+.modal {
+  width: min(calc(100vw - 2rem), 24rem);
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  color: var(--ink);
+  background: radial-gradient(120% 70% at 50% 0%, #fffdf8 0%, var(--paper) 100%);
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.55);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.modal::backdrop {
+  background: rgba(13, 12, 11, 0.62);
+  backdrop-filter: blur(2px);
+}
+.modal[open] { animation: modal-in 0.45s var(--ease); }
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(18px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.modal__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2.2rem 1.5rem 1.6rem;
+  text-align: center;
+}
+.modal__close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.7rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--taupe-deep);
+}
+.modal__close:hover,
+.modal__close:focus-visible { color: var(--ink); }
+.modal [hidden] { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .modal[open] { animation: none; }
+}

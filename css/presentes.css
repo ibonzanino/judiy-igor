@@ -181,49 +181,7 @@
 .text-link:focus-visible { border-color: var(--ink); }
 .gifts-foot { gap: 3.5rem; }
 
-/* ---------- Modal PIX ---------- */
-.pix {
-  width: min(calc(100vw - 2rem), 24rem);
-  max-height: calc(100dvh - 2rem);
-  margin: auto;
-  padding: 0;
-  border: 0;
-  border-radius: 6px;
-  color: var(--ink);
-  background: radial-gradient(120% 70% at 50% 0%, #fffdf8 0%, var(--paper) 100%);
-  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.55);
-  overflow: auto;
-}
-.pix::backdrop {
-  background: rgba(13, 12, 11, 0.62);
-  backdrop-filter: blur(2px);
-}
-.pix[open] { animation: pix-in 0.45s var(--ease); }
-@keyframes pix-in {
-  from { opacity: 0; transform: translateY(18px) scale(0.98); }
-  to { opacity: 1; transform: none; }
-}
-.pix__body {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 2.2rem 1.5rem 1.6rem;
-  text-align: center;
-}
-.pix__close {
-  position: absolute;
-  top: 0.4rem;
-  right: 0.7rem;
-  width: 2.2rem;
-  height: 2.2rem;
-  font-size: 1.7rem;
-  line-height: 1;
-  color: var(--taupe-deep);
-}
-.pix__close:hover,
-.pix__close:focus-visible { color: var(--ink); }
+/* ---------- Modal PIX (base .modal em styles.css) ---------- */
 .pix__title {
   font-style: italic;
   font-weight: 600;
@@ -258,9 +216,5 @@
   color: var(--ink-soft);
   word-break: break-all;
 }
-.pix [hidden] { display: none; }
 .pix__thanks { font-size: clamp(1.8rem, 8vw, 2.4rem); margin-top: 0.2rem; }
 
-@media (prefers-reduced-motion: reduce) {
-  .pix[open] { animation: none; }
-}

@@ -219,7 +219,7 @@ var GIFTS = [
     if (typeof dialog.close === "function") dialog.close();
     else dialog.removeAttribute("open");
   }
-  dialog.querySelector(".pix__close").addEventListener("click", close);
+  dialog.querySelector(".modal__close").addEventListener("click", close);
   // clique no fundo escuro fecha
   dialog.addEventListener("click", function (e) {
     if (e.target === dialog) close();

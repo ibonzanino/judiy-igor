@@ -1,0 +1,147 @@
+/* ============================================================
+   rsvp.css — modal "Confirmar presença!" (base .modal em styles.css)
+   ============================================================ */
+.rsvp-modal__title {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+.rsvp-modal__title:focus { outline: none; } /* recebe o foco a cada passo (leitor de tela) */
+
+.rsvp-step {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+.rsvp-modal__hint {
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 30ch;
+}
+.rsvp-modal__hint:empty { display: none; }
+.rsvp-modal__help { font-size: 1rem; color: var(--ink-soft); }
+.rsvp-modal__help a,
+.rsvp-link {
+  color: var(--ink);
+  border-bottom: 1px solid var(--sage);
+  transition: border-color 0.3s var(--ease);
+}
+.rsvp-modal__help a:hover,
+.rsvp-modal__help a:focus-visible,
+.rsvp-link:hover,
+.rsvp-link:focus-visible { border-color: var(--ink); }
+.rsvp-link { font-size: 1rem; padding: 0; color: var(--ink-soft); }
+.rsvp-modal__thanks { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+.rsvp-modal .btn--solid[disabled] { opacity: 0.6; cursor: progress; transform: none; }
+
+/* ---------- Pessoas do convite ---------- */
+.rsvp-guests { width: 100%; }
+.rsvp-guest {
+  min-width: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 0.75rem 0 0.85rem;
+}
+.rsvp-guest__name {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.rsvp-guest__tag {
+  margin-left: 0.5em;
+  font-family: var(--font-caps);
+  font-size: var(--fs-caps-sm);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--taupe-deep);
+}
+
+/* Vou / Não vou — par de botões tipo "pílula" */
+.rsvp-choice {
+  display: inline-flex;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.rsvp-choice label { position: relative; cursor: pointer; }
+.rsvp-choice label + label { border-left: 1px solid var(--ink); }
+.rsvp-choice input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.rsvp-choice span {
+  display: block;
+  min-width: 6.5em;
+  padding: 0.55em 1.1em;
+  font-family: var(--font-caps);
+  font-size: var(--fs-caps-sm);
+  letter-spacing: 0.08em;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.rsvp-choice input:checked + span { background: var(--ink); color: #fff; }
+.rsvp-choice input:focus-visible + span { box-shadow: inset 0 0 0 3px var(--sage-soft); }
+
+/* ---------- Campos de texto ---------- */
+.rsvp-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: left;
+  font-size: 1.02rem;
+}
+.rsvp-field em { color: var(--ink-soft); }
+.rsvp-field input,
+.rsvp-field textarea {
+  width: 100%;
+  padding: 0.55em 0.7em;
+  font-size: 1.05rem; /* ≥16px: evita o zoom automático do iOS */
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fffdf8;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.rsvp-field textarea { resize: vertical; min-height: 4.5em; }
+.rsvp-field input:focus,
+.rsvp-field textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(10, 45, 61, 0.12);
+}
+
+/* ---------- Resultados da busca ---------- */
+.rsvp-results {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.rsvp-results:empty { display: none; }
+.rsvp-results button {
+  width: 100%;
+  padding: 0.7em 1em;
+  font-size: 1.12rem;
+  font-style: italic;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fffdf8;
+  transition: border-color 0.2s var(--ease);
+}
+.rsvp-results button:hover,
+.rsvp-results button:focus-visible { border-color: var(--ink); }
+
+.rsvp-error { color: #8a2b1f; font-size: 1rem; }
