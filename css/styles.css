@@ -620,7 +620,11 @@ html {
 /* ============================================================
    Presentes (chamada p/ presentes.html)
    ============================================================ */
-.gifts-cta { gap: 1.1rem; padding-bottom: 3.5rem; }
+.gifts-cta {
+  gap: 1.1rem;
+  padding-bottom: 0; /* as flores do rodapé encostam no fim da página */
+}
+.gifts-cta .crest { margin-top: 3.4rem; } /* espaço entre o link e o logo final */
 .gifts-cta__text {
   width: min(92%, 32ch);
   font-style: italic;
@@ -632,11 +636,7 @@ html {
 /* ============================================================
    RSVP
    ============================================================ */
-.rsvp {
-  padding-top: 1rem;
-  padding-bottom: 0; /* as flores do rodapé encostam no fim da página */
-  gap: 4.5rem; /* espaço entre o botão e o logo final */
-}
+.rsvp { padding-bottom: 1rem; }
 .btn--solid {
   font-size: var(--fs-caps);
   letter-spacing: 0.08em;
@@ -659,7 +659,7 @@ html {
 }
 
 /* ============================================================
-   Logo final (dentro da seção RSVP)
+   Logo final (dentro da seção Presentes)
    ============================================================ */
 .crest {
   display: block;

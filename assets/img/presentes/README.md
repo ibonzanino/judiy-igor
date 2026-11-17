@@ -29,5 +29,5 @@ Enquanto um arquivo não existir, o cartão mostra o ícone de presente (`assets
 - `primeiros-socorros.webp` — Kit primeiros socorros: Igor na cozinha
 - `internet.webp` — Primeira conta de internet
 - `gasolina.webp` — Gasolina para visitar os sogros
-- `pizza.webp` — Um mês de pizza de domingo
+- `pizza.webp` — Um mês de pizza de sábado
 - `valor-livre.webp` — Valor livre

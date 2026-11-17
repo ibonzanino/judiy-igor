@@ -55,7 +55,7 @@ var GIFTS = [
       { name: "Kit primeiros socorros: Igor na cozinha", desc: "Band-aid, pomada para queimadura e muita paciência da Judiy.", value: 100, img: "primeiros-socorros.webp" },
       { name: "Primeira conta de internet", desc: "Em troca, você ganha a senha do Wi-Fi quando vier nos visitar.", value: 120, img: "internet.webp" },
       { name: "Gasolina para visitar os sogros", desc: "Um tanque cheio de boas intenções (e de saudade).", value: 150, img: "gasolina.webp" },
-      { name: "Um mês de pizza de domingo", desc: "Porque domingo à noite ninguém merece cozinhar.", value: 200, img: "pizza.webp" },
+      { name: "Um mês de pizza de sábado", desc: "Porque sábado à noite ninguém merece cozinhar.", value: 200, img: "pizza.webp" },
       { name: "Valor livre", desc: "Do tamanho do seu carinho — você escolhe o valor no app do banco.", value: null, img: "valor-livre.webp" },
     ],
   },
