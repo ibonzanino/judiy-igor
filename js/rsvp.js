@@ -62,8 +62,10 @@
   function loadInvite(c) {
     if (invite && invite.code === c) return Promise.resolve({ ok: true, invite: invite });
     if (!pending || pending.code !== c) {
+      // reaproveita a consulta que js/access.js já fez para este código
+      var acc = window.WEDDING_ACCESS;
       // "code", não "c": o Apps Script reserva os parâmetros "c" e "sid"
-      pending = get({ action: "invite", code: c });
+      pending = acc && acc.request && acc.code === c ? acc.request : get({ action: "invite", code: c });
       pending.code = c;
       pending.then(function (res) {
         if (res && res.ok) invite = res.invite;
@@ -132,6 +134,7 @@
       return notice("Prazo encerrado",
         "O prazo para confirmar presença terminou em " + ddmm(deadline) + ". Se precisar, fale com a gente.");
     }
+    if (!code) code = stored(); // ex.: clicou em "Não é você?", fechou e abriu de novo
     if (!code) return showSearch("");
 
     show("loading", "Confirmar presença");
@@ -293,11 +296,11 @@
   // o aviso "marque se cada pessoa vai" some assim que a pessoa marca algo
   form.addEventListener("change", function () { formError.hidden = true; });
 
-  // "Não é você?" — esquece o código salvo e volta para a busca
+  // "Não é você?" — volta para a busca. O código salvo só muda quando a pessoa
+  // escolhe outro convite (senão, sem código, ela ficaria trancada fora do site).
   dialog.querySelector("[data-not-me]").addEventListener("click", function () {
     code = "";
     invite = null;
-    save("");
     showSearch("");
   });
 

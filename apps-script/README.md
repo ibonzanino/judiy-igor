@@ -75,7 +75,14 @@ Ainda sem resposta:  =CONT.VALORES(Convidados!C2:C) - CONT.VALORES(Respostas!D2:
 - Quem abre o link `…/?c=CODIGO` vê os nomes do próprio convite e marca **Vou** ou
   **Não vou** para cada pessoa. O código fica salvo no navegador, então a
   pessoa pode voltar ao site sem o link.
-- Quem chega sem código procura pelo **nome e sobrenome**. A busca exige pelo menos
-  duas palavras e mostra só o nome do convite, então ninguém consegue listar os convidados.
+- **Só entra quem tem link com código válido** (`js/access.js`). Sem código, ou com um
+  código que não está na planilha, aparece a tela "Este convite é pessoal" com o botão
+  "Pedir o link no WhatsApp". Se o Google estiver fora do ar, quem tem código entra
+  mesmo assim. Isso vale para o convite e para a lista de presentes.
+- Dentro do modal, "Não é você?" deixa procurar outro convite pelo **nome e
+  sobrenome** (útil em celular compartilhado). A busca exige pelo menos duas palavras
+  e mostra só o nome do convite.
+- Para tirar alguém do site, apague as linhas do convite na aba Convidados. O link
+  dele para de abrir o site.
 - Depois do prazo (`rsvp.deadline` em `js/config.js`) o modal mostra só o contato
   de vocês.

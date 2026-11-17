@@ -744,3 +744,42 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .modal[open] { animation: none; }
 }
+
+/* ============================================================
+   Acesso só com o link do convite (js/access.js)
+   ============================================================ */
+/* enquanto o código é conferido, a página não aparece
+   (no index o envelope já cobre tudo; aqui vale p/ presentes.html) */
+html.access-check .page { visibility: hidden; }
+html.access-denied body { overflow: hidden; }
+
+/* tela "convite pessoal": mesmo fundo do envelope (.gate), por cima de tudo */
+.lock { z-index: 110; transition: none; }
+.lock__text {
+  max-width: 28ch;
+  margin-top: 0.4rem;
+  font-style: italic;
+  font-size: 1.22rem;
+  line-height: 1.5;
+  color: #e6e1d5;
+}
+.lock__btn {
+  margin-top: 0.6rem;
+  padding: 0.9em 1.8em;
+  font-family: var(--font-caps);
+  font-size: var(--fs-caps);
+  letter-spacing: 0.06em;
+  color: #f5f2ea;
+  border: 1px solid rgba(245, 242, 234, 0.55);
+  border-radius: 10px;
+  transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.lock__btn:hover,
+.lock__btn:focus-visible {
+  color: #f5f2ea;
+  background: rgba(245, 242, 234, 0.08);
+  border-color: #f5f2ea;
+}
+
+/* envelope esperando a conferência do código */
+.gate.is-waiting .envelope { cursor: progress; }

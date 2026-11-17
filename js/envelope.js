@@ -11,8 +11,27 @@
   // aba abre (0–1s) → cartão sai (0.75–1.7s) → envelope sai (1.85–2.35s) → fundo esmaece (2.1–2.7s)
   var HIDE_MS = reduce ? 400 : 2750;
 
+  // js/access.js confere o código do convite; o envelope só abre depois disso
+  var access = window.WEDDING_ACCESS;
+  var hint = gate.querySelector(".gate__hint");
+  var hintText = hint ? hint.textContent : "";
+  var waiting = false;
+
   function open() {
-    if (opened) return;
+    if (opened || waiting) return;
+    if (access && access.denied) return;
+    if (access && access.pending) {
+      waiting = true;
+      gate.classList.add("is-waiting");
+      if (hint) hint.textContent = "Abrindo seu convite…";
+      access.ready.then(function (ok) {
+        waiting = false;
+        gate.classList.remove("is-waiting");
+        if (hint) hint.textContent = hintText;
+        if (ok) open();
+      });
+      return;
+    }
     opened = true;
 
     envelope.classList.add("is-open");

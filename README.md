@@ -35,6 +35,10 @@ app. Each invite gets a personal link (`?c=CODE`); guests without a code can loo
 invite up by full name. Setup (in Portuguese): [`apps-script/README.md`](apps-script/README.md).
 Set `rsvp.api` and `rsvp.deadline` in `config.js`.
 
+Access is invite-only: `js/access.js` (loaded in `<head>` of both pages) checks the code
+against the sheet and shows a "personal invitation" screen without a valid one. It's a
+client-side barrier (the site source is public), and it is skipped while `rsvp.api` is empty.
+
 ## Photos
 
 **Heart locket (welcome):** uses `assets/img/locket.webp` (a transparent-background cut-out works
