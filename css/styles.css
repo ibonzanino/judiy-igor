@@ -620,11 +620,7 @@ html {
 /* ============================================================
    Presentes (chamada p/ presentes.html)
    ============================================================ */
-.gifts-cta {
-  gap: 1.1rem;
-  padding-bottom: 0; /* as flores do rodapé encostam no fim da página */
-}
-.gifts-cta .crest { margin-top: 3.4rem; } /* espaço entre o link e o logo final */
+.gifts-cta { gap: 1.1rem; }
 .gifts-cta__text {
   width: min(92%, 32ch);
   font-style: italic;
@@ -659,8 +655,12 @@ html {
 }
 
 /* ============================================================
-   Logo final (dentro da seção Presentes)
+   Logo final + flores do rodapé (depois de "Nossa história")
    ============================================================ */
+.closing {
+  gap: 1.1rem;
+  padding-bottom: 0; /* as flores do rodapé encostam no fim da página */
+}
 .crest {
   display: block;
   width: min(18%, 64px);
