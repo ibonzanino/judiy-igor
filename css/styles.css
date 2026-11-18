@@ -559,6 +559,8 @@ html {
 /* largura total: sem isso o bloco encolhe ao texto e o Safari quebrava
    "Endereço: Rua / Humberto Venturini, 620" mesmo com espaço sobrando */
 .dateloc .info-block { width: 100%; }
+/* endereço numa linha; se a tela for estreita demais, quebra só no " – " */
+.nowrap { white-space: nowrap; }
 /* só a data em negrito, e maior que o nome do local */
 .dateloc .dateloc__date {
   font-weight: 700;
