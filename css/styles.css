@@ -556,6 +556,9 @@ html {
 .dateloc .info-body { color: var(--paper); }
 .dateloc__title { margin-bottom: 0.6rem; }
 .info-block { display: flex; flex-direction: column; gap: 0.35rem; }
+/* largura total: sem isso o bloco encolhe ao texto e o Safari quebrava
+   "Endereço: Rua / Humberto Venturini, 620" mesmo com espaço sobrando */
+.dateloc .info-block { width: 100%; }
 /* só a data em negrito, e maior que o nome do local */
 .dateloc .dateloc__date {
   font-weight: 700;
