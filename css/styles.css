@@ -545,7 +545,15 @@ html {
 /* ============================================================
    Date & Location
    ============================================================ */
-.dateloc { gap: 1.4rem; }
+/* faixa azul com letras claras (como "Os Detalhes" e "Nossa história") */
+.dateloc {
+  gap: 1.4rem;
+  background: var(--ink);
+  color: var(--paper);
+}
+.dateloc .script-title,
+.dateloc .info-lead,
+.dateloc .info-body { color: var(--paper); }
 .dateloc__title { margin-bottom: 0.6rem; }
 .info-block { display: flex; flex-direction: column; gap: 0.35rem; }
 /* data e nome do local em negrito (sem os rótulos "Data"/"Local") */
@@ -559,6 +567,8 @@ html {
 .dateloc__photo--capela {
   width: min(40%, 150px);
   margin-top: 1rem;
+  /* silhueta azul (PNG transparente) → cor de papel sobre o fundo azul */
+  filter: brightness(0) invert(95%) sepia(10%);
 }
 .dateloc__maplink {
   display: inline-block;
@@ -577,6 +587,10 @@ html {
   color: var(--ink);
   border-color: var(--ink);
 }
+.dateloc .dateloc__maplink { color: var(--paper); border-color: var(--sage-soft); }
+.dateloc .dateloc__maplink:hover,
+.dateloc .dateloc__maplink:focus-visible { color: #fff; border-color: #fff; }
+.dateloc__rsvp { margin-top: 1.6rem; }
 
 /* ============================================================
    Timeline
@@ -632,7 +646,6 @@ html {
 /* ============================================================
    RSVP
    ============================================================ */
-.rsvp { padding-bottom: 1rem; }
 .btn--solid {
   font-size: var(--fs-caps);
   letter-spacing: 0.08em;
@@ -652,6 +665,23 @@ html {
   letter-spacing: 0.08em;
   transform: translateY(-1px);
   box-shadow: 0 10px 22px -10px rgba(10, 45, 61, 0.6);
+}
+/* variante clara (sobre fundo azul) e maior */
+.btn--light {
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 0 8px 22px -10px rgba(0, 0, 0, 0.55);
+}
+.btn--light:hover,
+.btn--light:focus-visible {
+  color: var(--ink);
+  background: #fffdf8;
+  box-shadow: 0 12px 26px -10px rgba(0, 0, 0, 0.6);
+}
+.btn--lg {
+  font-size: 1.05rem;
+  padding: 1.15em 2.8em;
+  border-radius: 12px;
 }
 
 /* ============================================================
