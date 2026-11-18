@@ -497,7 +497,6 @@ html {
   line-height: 1.3;
   color: var(--paper);
 }
-.details__text em { font-style: italic; }
 
 /* ============================================================
    Our Story
