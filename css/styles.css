@@ -556,8 +556,11 @@ html {
 .dateloc .info-body { color: var(--paper); }
 .dateloc__title { margin-bottom: 0.6rem; }
 .info-block { display: flex; flex-direction: column; gap: 0.35rem; }
-/* data e nome do local em negrito (sem os rótulos "Data"/"Local") */
-.dateloc .info-lead { font-weight: 700; }
+/* só a data em negrito, e maior que o nome do local */
+.dateloc .dateloc__date {
+  font-weight: 700;
+  font-size: 1.7rem;
+}
 .dateloc__photo {
   width: min(84%, 300px);
   height: auto;
@@ -565,7 +568,7 @@ html {
 }
 /* ícone da capela: silhueta, bem menor que a antiga moldura com foto */
 .dateloc__photo--capela {
-  width: min(40%, 150px);
+  width: min(28%, 105px);
   margin-top: 1rem;
   /* silhueta azul (PNG transparente) → cor de papel sobre o fundo azul */
   filter: brightness(0) invert(95%) sepia(10%);
