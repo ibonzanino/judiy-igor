@@ -3,15 +3,13 @@
    ============================================================ */
 
 /* Citadel Script — fonte premium (uso pessoal), auto-hospedada.
-   Coloque o arquivo em assets/fonts/. Enquanto não existir, cai no fallback (Pinyon Script). */
+   Pré-carregada no <head> do index.html e presentes.html. */
 @font-face {
   font-family: "Citadel Script";
-  src: url("../assets/fonts/citadel-script.otf") format("opentype"),
-       url("../assets/fonts/citadel-script.woff2") format("woff2"),
-       url("../assets/fonts/citadel-script.ttf") format("truetype");
+  src: url("../assets/fonts/citadel-script.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: block; /* espera a fonte (até ~3s) em vez de mostrar a reserva e trocar */
 }
 
 :root {
@@ -37,8 +35,8 @@
   --silver-hi: #f4f4f2;
 
   /* ---- Tipografia (3 famílias: script + serifa + serifa caps) ---- */
-  --font-script: "Citadel Script", "Pinyon Script", cursive;
-  --font-calli: "Citadel Script", "Pinyon Script", cursive;
+  --font-script: "Citadel Script", cursive;
+  --font-calli: "Citadel Script", cursive;
   --font-caps: "Merriweather", Georgia, serif;
   --font-body: "Cormorant Garamond", "EB Garamond", Georgia, serif;
 
