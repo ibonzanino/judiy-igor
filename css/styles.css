@@ -596,7 +596,8 @@ html {
   color: var(--ink);
   border-color: var(--ink);
 }
-.dateloc .dateloc__maplink { color: var(--paper); border-color: var(--sage-soft); }
+/* margem negativa compensa o gap de 1.4rem da seção: fica a ~0.6rem do endereço */
+.dateloc .dateloc__maplink { color: var(--paper); border-color: var(--sage-soft); margin-top: -0.8rem; }
 .dateloc .dateloc__maplink:hover,
 .dateloc .dateloc__maplink:focus-visible { color: #fff; border-color: #fff; }
 .dateloc__rsvp { margin-top: 1.6rem; }
