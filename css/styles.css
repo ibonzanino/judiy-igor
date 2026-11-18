@@ -574,7 +574,7 @@ html {
 /* ícone da capela: silhueta, bem menor que a antiga moldura com foto */
 .dateloc__photo--capela {
   width: min(28%, 105px);
-  margin-top: 1rem;
+  margin-top: 0;
   /* silhueta azul (PNG transparente) → cor de papel sobre o fundo azul */
   filter: brightness(0) invert(95%) sepia(10%);
 }
@@ -599,6 +599,8 @@ html {
 .dateloc .dateloc__maplink:hover,
 .dateloc .dateloc__maplink:focus-visible { color: #fff; border-color: #fff; }
 .dateloc__rsvp { margin-top: 1.6rem; }
+/* endereço também abre o mapa; visual igual ao texto, o "Ver no mapa" é a pista */
+.dateloc__addr { color: inherit; -webkit-tap-highlight-color: rgba(243, 239, 227, 0.15); }
 
 /* ============================================================
    Timeline
